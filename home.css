@@ -1,0 +1,732 @@
+/* ==========================================================================
+   1. CORE STYLES, CUSTOM FONTS & VARIABLES (UPDATED)
+   ========================================================================== */
+@import url('https://fonts.googleapis.com/css2?family=Heebo:wght@400;600;700;800&family=Kaisei+Decol:wght@700&family=Kaisei+Tokumin:wght@700&family=Krona+One&display=swap');
+
+:root {
+    --primary-teal: #2D8282;      /* Main teal color used in Gallery & CTA sections */
+    --dark-teal: #1F5B5B;         /* Darker teal for buttons and hover states */
+    --soft-gold: #B5945B;         /* Gold color used for subtitles like 'Your home away from home' */
+    --dark-charcoal: #1A1A1A;     /* Used for primary text, review buttons, and deep backgrounds */
+    --light-gray: #F9F9F9;        /* Light background tint for cards/sections */
+    --white: #FFFFFF;/* ==========================================================================
+   ASTURIAS BEACH HOUSE — home.css
+   Matches the mockup exactly. Do not change the HTML.
+   ========================================================================== */
+
+/* ---------- 1. FONTS & VARIABLES ---------- */
+@import url('https://fonts.googleapis.com/css2?family=Heebo:wght@400;600;700;800&family=Kaisei+Decol:wght@700&family=Kaisei+Tokumin:wght@700&family=Krona+One&family=Dancing+Script:wght@700&display=swap');
+@import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css');
+
+:root {
+    --primary-teal:   #2D8282;
+    --dark-teal:      #1F5B5B;
+    --soft-gold:      #B5945B;
+    --dark-charcoal:  #1A1A1A;
+    --light-gray:     #F9F9F9;
+    --white:          #FFFFFF;
+    --review-bg:      #f5f0e8;   /* warm parchment for review card */
+
+    --font-nav:       'Krona One', sans-serif;
+    --font-heading-primary:   'Kaisei Tokumin', serif;
+    --font-heading-secondary: 'Kaisei Decol', serif;
+    --font-body:      'Heebo', sans-serif;
+    --font-script:    'Dancing Script', cursive;
+}
+
+/* ---------- 2. RESET ---------- */
+*, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body {
+    font-family: var(--font-body);
+    color: #333;
+    line-height: 1.7;
+    background: var(--white);
+}
+img { display: block; max-width: 100%; }
+a { text-decoration: none; color: inherit; }
+ul { list-style: none; }
+address { font-style: normal; }
+
+/* ---------- 3. CONTAINER ---------- */
+.container {
+    width: 90%;
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 70px 0;
+}
+.text-center { text-align: center; }
+
+/* ==========================================================================
+   4. BUTTONS
+   ========================================================================== */
+.btn {
+    display: inline-block;
+    font-family: var(--font-body);
+    font-weight: 600;
+    font-size: 0.78rem;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    padding: 10px 28px;
+    border-radius: 30px;
+    cursor: pointer;
+    transition: background 0.3s, color 0.3s, border-color 0.3s, transform 0.2s;
+}
+.btn:hover { transform: translateY(-2px); }
+
+/* teal filled — used in hero & CTA */
+.btn-primary,
+.btn-teal {
+    background: var(--primary-teal);
+    color: var(--white);
+    border: 2px solid var(--primary-teal);
+}
+.btn-primary:hover,
+.btn-teal:hover { background: var(--dark-teal); border-color: var(--dark-teal); }
+
+/* outline teal — "ABOUT US" */
+.btn-outline {
+    background: transparent;
+    color: var(--primary-teal);
+    border: 2px solid var(--primary-teal);
+}
+.btn-outline:hover { background: var(--primary-teal); color: var(--white); }
+
+/* dark filled — gallery "SEE MORE", reviews button */
+.btn-dark {
+    background: var(--dark-charcoal);
+    color: var(--white);
+    border: 2px solid var(--dark-charcoal);
+}
+.btn-dark:hover { background: #333; border-color: #333; }
+
+/* small variant */
+.btn-sm { padding: 7px 20px; font-size: 0.72rem; }
+
+/* ==========================================================================
+   5. HERO / HEADER
+   ========================================================================== */
+.hero-section {
+    position: relative;
+    min-height: 100vh;
+    background:
+        linear-gradient(to bottom, rgba(0,0,0,0.55) 0%, rgba(0,0,0,0.35) 50%, rgba(0,0,0,0.60) 100%),
+        url('images/hero-bg.jpg') center center / cover no-repeat;
+    display: flex;
+    flex-direction: column;
+}
+
+/* ---- NAVBAR ---- */
+.navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 999;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 40px;
+    padding: 16px 40px;
+    background: rgba(0, 0, 0, 0.52);
+    backdrop-filter: blur(6px);
+    -webkit-backdrop-filter: blur(6px);
+}
+
+.nav-links {
+    display: flex;
+    gap: 28px;
+    align-items: center;
+}
+
+.nav-links a {
+    font-family: var(--font-nav);
+    font-size: 0.68rem;
+    font-weight: 400;
+    letter-spacing: 1.2px;
+    color: var(--white);
+    text-transform: uppercase;
+    transition: color 0.3s;
+}
+.nav-links a:hover { color: var(--primary-teal); }
+
+.nav-logo img {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 2px solid rgba(255,255,255,0.6);
+    display: block;
+}
+
+/* ---- HERO CONTENT ---- */
+.hero-content {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 100px 24px 60px;
+    color: var(--white);
+}
+
+.hero-content h1 {
+    font-family: var(--font-heading-primary);
+    font-weight: 700;
+    font-size: clamp(2.2rem, 5.5vw, 4rem);
+    letter-spacing: 4px;
+    text-transform: uppercase;
+    text-shadow: 0 2px 24px rgba(0,0,0,0.65);
+    margin-bottom: 6px;
+    line-height: 1.15;
+}
+
+.hero-content .sub-brand {
+    font-family: var(--font-script);
+    font-size: clamp(1.1rem, 2.5vw, 1.6rem);
+    color: rgba(255,255,255,0.85);
+    letter-spacing: 1px;
+    margin-bottom: 32px;
+}
+
+/* ==========================================================================
+   6. EXPLORE THE PARADISE SECTION
+   ========================================================================== */
+.explore-section {
+    background: var(--white);
+}
+
+.explore-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 60px;
+    align-items: center;
+}
+
+.explore-text h2 {
+    font-family: var(--font-heading-secondary);
+    font-weight: 700;
+    font-size: clamp(1.6rem, 3vw, 2.4rem);
+    color: var(--primary-teal);
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    margin-bottom: 4px;
+}
+
+.explore-text .tagline {
+    font-family: var(--font-body);
+    font-size: 0.9rem;
+    color: var(--soft-gold);
+    font-style: italic;
+    margin-bottom: 30px;
+}
+
+.explore-text h3 {
+    font-family: var(--font-body);
+    font-weight: 700;
+    font-size: 1rem;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: var(--primary-teal);
+    margin-bottom: 14px;
+}
+
+.explore-text p {
+    font-size: 0.92rem;
+    color: #555;
+    line-height: 1.85;
+    margin-bottom: 26px;
+}
+
+.explore-image img {
+    width: 100%;
+    height: 380px;
+    object-fit: cover;
+    border-radius: 12px;
+    box-shadow: 0 6px 30px rgba(0,0,0,0.14);
+}
+
+/* ==========================================================================
+   7. OUR ROOMS SECTION
+   ========================================================================== */
+.rooms-section {
+    background: var(--light-gray);
+}
+
+.rooms-section h2 {
+    font-family: var(--font-heading-secondary);
+    font-weight: 700;
+    font-size: clamp(1.6rem, 3vw, 2.4rem);
+    color: var(--dark-charcoal);
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    margin-bottom: 6px;
+}
+
+.section-desc {
+    font-size: 0.9rem;
+    color: #666;
+    margin-bottom: 40px;
+    line-height: 1.7;
+}
+
+.rooms-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+    margin-top: 10px;
+}
+
+.room-card {
+    position: relative;
+    height: 240px;
+    border-radius: 10px;
+    overflow: hidden;
+    background-size: cover;
+    background-position: center;
+    box-shadow: 0 4px 18px rgba(0,0,0,0.15);
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+.room-card:hover { transform: translateY(-5px); box-shadow: 0 10px 32px rgba(0,0,0,0.22); }
+
+.room-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to top, rgba(0,0,0,0.75) 40%, rgba(0,0,0,0.15) 100%);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-end;
+    padding: 22px 16px;
+    text-align: center;
+    color: var(--white);
+}
+
+.room-overlay h3 {
+    font-family: var(--font-body);
+    font-weight: 700;
+    font-size: 0.85rem;
+    letter-spacing: 2.5px;
+    text-transform: uppercase;
+    margin-bottom: 2px;
+}
+
+.room-overlay p {
+    font-size: 0.72rem;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    color: rgba(255,255,255,0.8);
+    margin-bottom: 12px;
+}
+
+/* ==========================================================================
+   8. GALLERY SECTION
+   ========================================================================== */
+.gallery-section {
+    background: var(--white);
+}
+
+.gallery-section h2 {
+    font-family: var(--font-heading-secondary);
+    font-weight: 700;
+    font-size: clamp(1.6rem, 3vw, 2.4rem);
+    color: var(--primary-teal);
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    margin-bottom: 36px;
+}
+
+.gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(2, 200px);
+    gap: 12px;
+    margin-bottom: 32px;
+}
+
+.gallery-item {
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 3px 14px rgba(0,0,0,0.12);
+    transition: transform 0.3s;
+}
+.gallery-item:hover { transform: scale(1.03); }
+
+.gallery-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* ==========================================================================
+   9. GUEST REVIEWS SECTION
+   ========================================================================== */
+.reviews-section {
+    background:
+        linear-gradient(rgba(0,0,0,0.48), rgba(0,0,0,0.48)),
+        url('images/beach-bg.jpg') center center / cover no-repeat;
+    padding: 0;
+}
+
+.reviews-section .container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.reviews-section h2 {
+    font-family: var(--font-heading-secondary);
+    font-weight: 700;
+    font-size: clamp(1.6rem, 3vw, 2.4rem);
+    color: var(--white);
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    margin-bottom: 36px;
+    text-align: center;
+}
+
+.review-card {
+    background: rgba(255, 255, 255, 0.97);
+    border-radius: 12px;
+    padding: 44px 52px;
+    max-width: 740px;
+    width: 100%;
+    text-align: center;
+    box-shadow: 0 8px 36px rgba(0,0,0,0.22);
+}
+
+.quote-icon {
+    display: block;
+    font-family: Georgia, serif;
+    font-size: 5rem;
+    color: var(--primary-teal);
+    line-height: 0.6;
+    margin-bottom: 24px;
+}
+
+.review-text {
+    font-size: 0.93rem;
+    color: #444;
+    font-style: italic;
+    line-height: 1.95;
+    margin-bottom: 20px;
+}
+
+.review-author {
+    font-weight: 700;
+    font-size: 0.9rem;
+    color: var(--dark-charcoal);
+    margin-bottom: 20px;
+}
+
+/* ==========================================================================
+   10. FEATURES SECTION
+   ========================================================================== */
+.features-section {
+    background: var(--white);
+    border-top: 1px solid #eee;
+}
+
+.features-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 32px;
+    padding: 60px 0;
+}
+
+.feature-item {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 12px;
+}
+
+.feature-icon {
+    width: 52px;
+    height: 52px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.4rem;
+    flex-shrink: 0;
+}
+
+/* icon colors matching mockup */
+.feature-item:nth-child(1) .feature-icon { background: #e0f2f1; color: var(--primary-teal); }
+.feature-item:nth-child(2) .feature-icon { background: #fce4ec; color: #e07a8a; }
+.feature-item:nth-child(3) .feature-icon { background: #e8f5e9; color: #43a047; }
+.feature-item:nth-child(4) .feature-icon { background: #fff8e1; color: #f4a940; }
+
+.feature-text h3 {
+    font-family: var(--font-body);
+    font-weight: 800;
+    font-size: 0.95rem;
+    color: var(--dark-charcoal);
+    margin-bottom: 5px;
+}
+
+.feature-text p {
+    font-size: 0.82rem;
+    color: #666;
+    line-height: 1.75;
+}
+
+/* ==========================================================================
+   11. MAP SECTION
+   ========================================================================== */
+.map-section {
+    background: var(--light-gray);
+}
+
+.map-section h2 {
+    font-family: var(--font-body);
+    font-weight: 800;
+    font-size: clamp(1.5rem, 3vw, 2.2rem);
+    color: var(--dark-charcoal);
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    margin-bottom: 28px;
+}
+
+.map-container {
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 4px 24px rgba(0,0,0,0.14);
+}
+
+.map-container iframe { display: block; }
+
+/* ==========================================================================
+   12. CTA SECTION
+   ========================================================================== */
+.cta-section {
+    background: linear-gradient(135deg, #1a6b5e 0%, #2D8282 55%, #3bbcae 100%);
+    color: var(--white);
+}
+
+.cta-section h2 {
+    font-family: var(--font-script);
+    font-size: clamp(2rem, 4.5vw, 3.2rem);
+    font-weight: 700;
+    line-height: 1.35;
+    margin-bottom: 10px;
+    color: var(--white);
+}
+
+.cta-section h2 span {
+    color: #b2f0e8;
+    display: block;
+}
+
+.cta-section p {
+    font-size: 0.9rem;
+    color: rgba(255,255,255,0.8);
+    margin-bottom: 30px;
+}
+
+.cta-buttons {
+    display: flex;
+    gap: 16px;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+/* override teal buttons inside teal bg to be white-bordered */
+.cta-section .btn-teal {
+    background: rgba(255,255,255,0.15);
+    border: 2px solid var(--white);
+    color: var(--white);
+    backdrop-filter: blur(4px);
+}
+.cta-section .btn-teal:hover {
+    background: var(--white);
+    color: var(--dark-teal);
+}
+
+/* ==========================================================================
+   13. FOOTER
+   ========================================================================== */
+.main-footer {
+    background: var(--dark-charcoal);
+    color: rgba(255,255,255,0.7);
+    padding: 56px 24px 32px;
+    text-align: center;
+}
+
+.footer-logo img {
+    width: 90px;
+    height: 90px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin: 0 auto 20px;
+    border: 2px solid var(--primary-teal);
+}
+
+.footer-address {
+    font-size: 0.82rem;
+    line-height: 1.9;
+    color: rgba(255,255,255,0.65);
+    margin-bottom: 6px;
+}
+
+.footer-email a {
+    font-size: 0.82rem;
+    color: rgba(255,255,255,0.65);
+    transition: color 0.3s;
+}
+.footer-email a:hover { color: var(--primary-teal); }
+
+.footer-phone {
+    font-size: 0.82rem;
+    color: rgba(255,255,255,0.55);
+    margin: 4px 0 20px;
+}
+
+.footer-socials {
+    display: flex;
+    gap: 14px;
+    justify-content: center;
+    margin-bottom: 22px;
+}
+
+.footer-socials a {
+    width: 38px;
+    height: 38px;
+    border-radius: 50%;
+    background: rgba(255,255,255,0.1);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--white);
+    font-size: 0.88rem;
+    transition: background 0.3s;
+}
+.footer-socials a:hover { background: var(--primary-teal); }
+
+.footer-copyright {
+    font-size: 0.72rem;
+    color: rgba(255,255,255,0.3);
+    margin-top: 4px;
+}
+
+/* ==========================================================================
+   14. RESPONSIVE
+   ========================================================================== */
+@media (max-width: 960px) {
+    .explore-grid      { grid-template-columns: 1fr; gap: 36px; }
+    .explore-image img { height: 280px; }
+    .rooms-grid        { grid-template-columns: 1fr 1fr; }
+    .features-grid     { grid-template-columns: 1fr 1fr; gap: 24px; }
+    .gallery-grid      { grid-template-rows: repeat(2, 160px); }
+}
+
+@media (max-width: 700px) {
+    .navbar      { gap: 14px; padding: 12px 20px; flex-wrap: wrap; }
+    .nav-links   { gap: 12px; }
+    .nav-links a { font-size: 0.58rem; }
+    .rooms-grid  { grid-template-columns: 1fr; }
+    .gallery-grid {
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: repeat(3, 160px);
+    }
+    .features-grid { grid-template-columns: 1fr; }
+    .review-card   { padding: 28px 22px; }
+    .left-nav, .right-nav { display: none; } /* collapses nav on very small; add hamburger if needed */
+}
+
+    
+    /* Assigned fonts per your mockup styling rules */
+    --font-nav: 'Krona One', sans-serif;
+    --font-heading-primary: 'Kaisei Tokumin', serif;
+    --font-heading-secondary: 'Kaisei Decol', serif;
+    --font-body: 'Heebo', sans-serif;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: var(--font-body);
+    font-weight: 400; /* Heebo Regular */
+    color: #333333;
+    line-height: 1.6;
+    background-color: var(--white);
+}
+
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 60px 0;
+}
+
+.text-center {
+    text-align: center;
+}
+
+/* ==========================================================================
+   UPDATED FONT ASSIGNMENTS FOR YOUR SPECIFIC UTILITIES
+   ========================================================================== */
+
+/* Navbar links using Krona One */
+.nav-links a {
+    font-family: var(--font-nav);
+    font-weight: 400; /* Krona One only comes in regular */
+    color: var(--white);
+    text-decoration: none;
+    font-size: 0.75rem; /* Kept small because Krona One runs naturally wide */
+    letter-spacing: 1px;
+    transition: color 0.3s ease;
+}
+
+/* Hero Title using Kaisei Tokumin Bold */
+.hero-content h1 {
+    font-family: var(--font-heading-primary);
+    font-weight: 700; 
+    font-size: 3.5rem;
+    letter-spacing: 3px;
+    margin-bottom: 5px;
+}
+
+/* Section titles ("EXPLORE THE PARADISE", "OUR ROOMS") using Kaisei Decol Bold */
+.explore-text h2,
+.rooms-section h2,
+.gallery-section h2,
+.reviews-section h2 {
+    font-family: var(--font-heading-secondary);
+    font-weight: 700;
+    color: var(--primary-teal);
+    font-size: 2.5rem;
+    letter-spacing: 1px;
+    margin-bottom: 5px;
+}
+
+/* Sub-headings and smaller element bolding using Heebo weights */
+.explore-text h3 {
+    font-family: var(--font-body);
+    font-weight: 700; /* Heebo Bold */
+    color: var(--primary-teal);
+    font-size: 1.4rem;
+    margin-bottom: 15px;
+}
+
+.feature-text h3,
+.map-section h2,
+.cta-section h2 {
+    font-family: var(--font-body);
+    font-weight: 800; /* Heebo ExtraBold for strong impactful sections */
+}
+
+.btn {
+    font-family: var(--font-body);
+    font-weight: 600; /* Heebo SemiBold for clean button interfaces */
+}
