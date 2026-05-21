@@ -5,6 +5,8 @@
 
 :root {
     --primary-teal: #2D8282;      /* Main teal color used in Gallery & CTA sections */
+    --dark-teal: #388687;         /* Darker teal for buttons and hover states */
+    --soft-gold: #877638;         /* Gold color used for subtitles like 'Your home away from home' */
     --dark-charcoal: #1A1A1A;     /* Used for primary text, review buttons, and deep backgrounds */
     --light-gray: #F9F9F9;        /* Light background tint for cards/sections */
     --white: #FFFFFF;/* ==========================================================================
@@ -18,6 +20,8 @@
 
 :root {
     --primary-teal:   #2D8282;
+    --dark-teal:      #388687;
+    --soft-gold:      #877638;
     --dark-charcoal:  #1A1A1A;
     --light-gray:     #F9F9F9;
     --white:          #FFFFFF;
@@ -178,6 +182,7 @@ address { font-style: normal; }
     line-height: 1.15;
 }
 
+.hero-content h2.sub-brand {
     font-family: var(--font-script);
     font-size: clamp(1.1rem, 2.5vw, 1.6rem);
     color: rgba(255,255,255,0.85);
@@ -253,10 +258,12 @@ address { font-style: normal; }
     font-family: var(--font-heading-secondary);
     font-weight: 700;
     font-size: clamp(1.6rem, 3vw, 2.4rem);
+    color: #388687;
     letter-spacing: 2px;
     text-transform: uppercase;
     margin-bottom: 6px;
 }
+
 
 .section-desc {
     font-size: 0.9rem;
@@ -298,7 +305,9 @@ address { font-style: normal; }
 }
 
 .room-overlay h3 {
+    font-family: var(--font-heading-secondary);
     font-weight: 700;
+    font-size: 1 rem;
     letter-spacing: 2.5px;
     text-transform: uppercase;
     margin-bottom: 2px;
@@ -687,7 +696,13 @@ body {
     font-size: 3.5rem;
     letter-spacing: 3px;
     margin-bottom: 5px;
+    margin-top: -500px;
 }
+
+.hero-video {
+    margin-top: -110px;
+}
+
 
 /* Section titles ("EXPLORE THE PARADISE", "OUR ROOMS") using Kaisei Decol Bold */
 .explore-text h2,
@@ -699,6 +714,17 @@ body {
     font-size: 2.5rem;
     letter-spacing: 1px;
     margin-bottom: 5px;
+    margin-top: 200px;
+}
+
+.rooms-section h2 {
+    font-family: var(--font-heading-secondary);
+    font-weight: 700;
+    color: var(--primary-teal);
+    font-size: 2.5rem;
+    letter-spacing: 1px;
+    margin-bottom: 5px;
+    margin-top: 20px;
 }
 
 /* Sub-headings and smaller element bolding using Heebo weights */
