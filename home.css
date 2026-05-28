@@ -10,9 +10,6 @@
     --dark-charcoal: #1A1A1A;     /* Used for primary text, review buttons, and deep backgrounds */
     --light-gray: #F9F9F9;        /* Light background tint for cards/sections */
     --white: #FFFFFF;/* ==========================================================================
-   ASTURIAS BEACH HOUSE — home.css
-   Matches the mockup exactly. Do not change the HTML.
-   ========================================================================== */
 
 /* ---------- 1. FONTS & VARIABLES ---------- */
 @import url('https://fonts.googleapis.com/css2?family=Heebo:wght@400;600;700;800&family=Kaisei+Decol:wght@700&family=Kaisei+Tokumin:wght@700&family=Krona+One&family=Dancing+Script:wght@700&display=swap');
@@ -57,9 +54,7 @@ address { font-style: normal; }
 }
 .text-center { text-align: center; }
 
-/* ==========================================================================
-   4. BUTTONS
-   ========================================================================== */
+/*  BUTTONS */
 .btn {
     display: inline-block;
     font-family: var(--font-body);
@@ -84,7 +79,7 @@ address { font-style: normal; }
 .btn-primary:hover,
 .btn-teal:hover { background: var(--dark-teal); border-color: var(--dark-teal); }
 
-/* outline teal — "ABOUT US" */
+/*about us button */
 .btn-outline {
     background: transparent;
     color: var(--primary-teal);
@@ -92,7 +87,7 @@ address { font-style: normal; }
 }
 .btn-outline:hover { background: var(--primary-teal); color: var(--white); }
 
-/* dark filled — gallery "SEE MORE", reviews button */
+/* gallery SEE MORE, reviews button */
 .btn-dark {
     background: var(--dark-charcoal);
     color: var(--white);
@@ -190,62 +185,114 @@ address { font-style: normal; }
     margin-bottom: 32px;
 }
 
-/* ==========================================================================
-   6. EXPLORE THE PARADISE SECTION
-   ========================================================================== */
+/* section part */
 .explore-section {
     background: var(--white);
+    padding: 60px 0; 
 }
 
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.text-center {
+    text-align: center;
+}
+
+.explore-header {
+    margin-bottom: 60px;
+}
+
+.explore-header h2 {
+    font-family: var(--font-heading-secondary);
+    font-weight: 700;
+    font-size: clamp(1.8rem, 4vw, 2.8rem);
+    color: var(--primary-teal);
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    margin-bottom: 10px;
+}
+
+.explore-header .tagline {
+    font-family: var(--font-body);
+    font-size: 1.1rem;
+    color: var(--soft-gold);
+    letter-spacing: 0.15em; /* Fixed from 15% */
+    margin-bottom: 120px;
+}
+
+/* --- GRID LAYOUT --- */
 .explore-grid {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    gap: 60px;
-    align-items: center;
+    gap: 80px;
+    align-items: center; /* Vertically aligns text column with image column */
 }
 
-.explore-text h2 {
+/* --- LEFT COLUMN CONTENT --- */
+.explore-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Centers the button and texts horizontally in the column */
+    padding: 0 20px;
+}
+
+.explore-content h3 {
     font-family: var(--font-heading-secondary);
     font-weight: 700;
-    font-size: clamp(1.6rem, 3vw, 2.4rem);
-    color: var(--primary-teal);
-    letter-spacing: 2px;
+    font-size: 1.4rem;
+    letter-spacing: 1px;
     text-transform: uppercase;
-    margin-bottom: 4px;
+    color: var(--primary-teal);
+    margin-bottom: 20px;
 }
 
-.explore-text .tagline {
-    font-family: var(--font-body);
-    font-size: 0.9rem;
-    color: var(--soft-gold);
+.explore-content p {
+    font-size: 0.95rem;
+    color: #333;
+    line-height: 1.8;
     margin-bottom: 30px;
-    letter-spacing: 15%;
+    max-width: 450px; /* Keeps paragraph reading length comfortable like the image */
+    letter-spacing: 8%;
 }
 
-.explore-text h3 {
-    font-family: var(--font-body);
-    font-weight: 700;
-    font-size: 1rem;
-    letter-spacing: 2px;
-    text-transform: uppercase;
+/* --- PILL BUTTON STYLE --- */
+.btn-outline {
+    display: inline-block;
+    padding: 10px 35px;
+    border: 1.5px solid var(--primary-teal);
     color: var(--primary-teal);
-    margin-bottom: 14px;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 0.9rem;
+    letter-spacing: 1px;
+    border-radius: 50px; /* Gives it the exact pill shape from your design */
+    transition: all 0.3s ease;
 }
 
-.explore-text p {
-    font-size: 0.92rem;
-    color: #555;
-    line-height: 1.85;
-    margin-bottom: 26px;
+.btn-outline:hover {
+    background-color: var(--primary-teal);
+    color: #fff;
 }
 
+/* --- RIGHT COLUMN IMAGE --- */
 .explore-image img {
     width: 100%;
-    height: 380px;
+    height: auto;
+    max-height: 500px;
     object-fit: cover;
-    border-radius: 12px;
-    box-shadow: 0 6px 30px rgba(0,0,0,0.14);
-    margin-top: 100px;
+    display: block;
+    /* Removed the massive margin-top so it aligns perfectly with the text */
+}
+
+/* --- RESPONSIVE DESIGN (MOBILE) --- */
+@media (max-width: 768px) {
+    .explore-grid {
+        grid-template-columns: 1fr; /* Stacks column on top of each other on mobile devices */
+        gap: 40px;
+    }
 }
 
 /* ==========================================================================
@@ -295,7 +342,7 @@ address { font-style: normal; }
 .room-overlay {
     position: absolute;
     inset: 0;
-    background: linear-gradient(to top, rgba(0,0,0,0.75) 40%, rgba(0,0,0,0.15) 100%);
+    background: linear-gradient(to top, rgba(0,0,0,0.5) 40%, rgba(0,0,0,0.05) 100%);
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -690,18 +737,57 @@ body {
     transition: color 0.3s ease;
 }
 
-/* Hero Title using Kaisei Tokumin Bold */
-.hero-content h1 {
+/* --- THE CONTAINER --- */
+.hero-content {
+    position: relative; /* Acts as the anchor for the absolute positioned elements */
+    width: 100%;
+    height: 100hv; /* You can also use 100vh to make it full screen height */
+    display: flex;
+    align-items: center; /* Centers content vertically */
+    justify-content: center; /* Centers content horizontally */
+    overflow: hidden; /* Prevents the video from spilling out */
+}
+
+.hero-video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover; 
+    z-index: 1; 
+    object-position: center; 
+    
+}
+
+.hero-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 2; /* Sits on top of the video */
+    background: linear-gradient(to bottom, rgba(0, 0, 0, 0.2) 0%, rgba(0, 0, 0, 0.5) 100%);
+}
+
+.hero-text {
+    position: relative;
+    z-index: 3; /* Sits on top of the overlay */
+    text-align: center;
+    color: #ffffff; /* Ensures text is white against the dark gradient */
+}
+
+.hero-text h1 {
     font-family: var(--font-heading-primary);
     font-weight: 700; 
     font-size: 3.5rem;
     letter-spacing: 3px;
     margin-bottom: 5px;
-    margin-top: -500px;
+    margin-top: 0; /* Resetting your old margins */
 }
 
-.hero-video {
-    margin-top: -110px;
+.hero-text .sub-brand {
+    margin-bottom: 30px; /* Adds space before the button */
 }
 
 
@@ -715,7 +801,7 @@ body {
     font-size: 64px;
     letter-spacing: 1px;
     margin-bottom: 5px;
-    margin-top: 200px;
+    margin-top: 50px;
 }
 
 .rooms-section h2 {

@@ -3,9 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/x-icon" href="images/favicon.ico">
     <title>Asturias Beach House | By Blissful Creations</title>
     <link rel="stylesheet" href="home.css">
-    <!-- Font Awesome (required for feature icons & footer social icons) -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 </head>
 <body>
@@ -32,28 +32,36 @@
         </nav>
 
         <div class="hero-content">
-            <video class="hero-video" autoplay muted loop width="1205" height="700">
+            <video class="hero-video" autoplay muted loop playsinline>
                 <source src="images/0521(1).mp4" type="video/mp4">
             </video>
-            <h1>ASTURIAS BEACH HOUSE</h1>
-            <h2 class="sub-brand">by Blissful Creations</h2>
-            <a href="#contact" class="btn btn-primary">CONTACT US</a> <!-- Placeholder link for contact button -->
+            
+            <div class="hero-overlay"></div>
+            
+            <div class="hero-text">
+                <h1>ASTURIAS BEACH HOUSE</h1>
+                <h2 class="sub-brand">by Blissful Creations</h2>
+                <a href="#contact" class="btn btn-primary">CONTACT US</a> 
+            </div>
         </div>
     </header>
 
 
     <section id="about" class="explore-section">
-        <div class="container text-center">
-            <div class="explore-text">
+        <div class="container">
+
+            <div class="explore-header text-center">
                 <h2>EXPLORE THE PARADISE</h2>
                 <p class="tagline">Your home away from home.</p>
-                <div class="container explore-grid">
             </div>
-            
-            <div class="explore-section2 explore-grid">
+
+            <div class="explore-grid">
+                <div class="explore-content text-center">
                     <h3>A DREAM WITHIN REACH</h3>
-                    <p>Your dream beach getaway doesn't have to break the bank. Asturias Beach House offers affordable accommodations, delicious meals, and exciting water activities with no entrance fee. Bring your barkada or family to Asturias, Cebu, and make unforgettable memories.</p>
+                    <p>Your dream beach getaway doesn't have to break the bank. Asturias Beach House offers affordable accommodations, delicious meals, and exciting water activities with no entrance fee. Bring your barkada or family to Asturias, Cebu and make unforgettable memories.</p>
                     <a href="#about-more" class="btn btn-outline">ABOUT US</a>
+                </div>
+               
                 <div class="explore-image">
                     <img src="images/feature-1.png" alt="Beautiful features of Asturias Beach House">
                 </div>
@@ -68,7 +76,7 @@
             <p class="section-desc">We have rooms available to suit your needs.<br>Perfect for couples, families, or groups of friends.</p>
             
             <div class="rooms-grid">
-                <div class="room-card" style="background-image: url('images/Screenshot\ 2026-05-21\ 172404.png');">
+                <div class="room-card" style="background-image: url('images/room-single.png');">
                     <div class="room-overlay">
                         <h3>SINGLE BED</h3>
                         <p>ONE OCCUPANCY</p>
@@ -76,7 +84,7 @@
                     </div>
                 </div>
                 
-                <div class="room-card" style="background-image: url('room-twin.jpg');">
+                <div class="room-card" style="background-image: url('images/room-twin.png');">
                     <div class="room-overlay">
                         <h3>TWIN BED</h3>
                         <p>DOUBLE OCCUPANCY</p>
@@ -84,7 +92,7 @@
                     </div>
                 </div>
                 
-                <div class="room-card" style="background-image: url('room-barkada.jpg');">
+                <div class="room-card" style="background-image: url('images/barkada-room.png');">
                     <div class="room-overlay">
                         <h3>BARKADA BED</h3>
                         <p>FAMILY ROOM</p>
