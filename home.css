@@ -89,9 +89,9 @@ address { font-style: normal; }
 
 /* gallery SEE MORE, reviews button */
 .btn-darkteal {
-    background: #1E4041;
+    background: #2d5d5f;
     color: var(--white);
-    border: 2px solid #1E4041;
+    border: 2px solid #2d5d5f;
 }
 .btn-darkteal:hover { background: #163233; border-color: #163233; }
 
@@ -550,114 +550,151 @@ address { font-style: normal; }
 .map-container iframe { display: block; }
 
 /* 12. CTA SECTION */
+/* ==========================================================================
+   12. CALL TO ACTION (CTA) SECTION
+   ========================================================================== */
 .cta-section {
-    background: linear-gradient(135deg, #1a6b5e 0%, #2D8282 55%, #3bbcae 100%);
-    color: var(--white);
+    background: #ffffff; /* White background matching your image */
+    padding: 80px 0 40px;
+    text-align: center;
 }
 
 .cta-section h2 {
-    font-family: var(--font-script);
-    font-size: clamp(2rem, 4.5vw, 3.2rem);
+    font-family: var(--font-heading-primary), sans-serif; /* Changed from script to match image */
+    font-size: clamp(2.2rem, 5vw, 3.2rem);
     font-weight: 700;
-    line-height: 1.35;
-    margin-bottom: 10px;
-    color: var(--white);
+    line-height: 1.25;
+    margin-bottom: 25px;
+    color: #3b8b8b; /* Teal color for 'Spend your Day in' */
 }
 
-.cta-section h2 span {
-    color: #b2f0e8;
+.cta-section h2 .brand-gold {
+    color: #9e813b; /* Deep gold color for 'Asturias Beach House' */
     display: block;
+    margin-top: 5px;
 }
 
-.cta-section p {
-    font-size: 0.9rem;
-    color: rgba(255,255,255,0.8);
-    margin-bottom: 30px;
+.cta-tagline {
+    font-size: 1.1rem;
+    color: #000000; /* Crisp black text */
+    font-weight: 700; /* Bold font weight matching the picture */
+    margin-bottom: 35px;
+    letter-spacing: 0.5px;
 }
 
 .cta-buttons {
     display: flex;
-    gap: 16px;
+    gap: 20px;
     justify-content: center;
     flex-wrap: wrap;
 }
 
 /* override teal buttons inside teal bg to be white-bordered */
 .cta-section .btn-teal {
-    background: rgba(255,255,255,0.15);
-    border: 2px solid var(--white);
-    color: var(--white);
-    backdrop-filter: blur(4px);
+    background: #3b8b8b; /* Solid teal background */
+    color: #ffffff;
+    border: none;
+    padding: 12px 36px;
+    font-size: 1rem;
+    font-weight: 600;
+    border-radius: 8px; /* Smooth rounded corners instead of pills */
+    text-decoration: none;
+    transition: background 0.3s ease;
 }
+
 .cta-section .btn-teal:hover {
     background: var(--white);
     color: var(--dark-teal);
 }
 
 /* ==========================================================================
-   13. FOOTER
+   GEOMETRIC SHAPE DIVIDER
+   ========================================================================== */
+.geo-divider {
+    background: #4ca1a1; /* Matches the main footer background color */
+    height: 140px;
+    width: 100%;
+    /* Creates the exact jagged landscape/mountain peaks matching the picture */
+    clip-path: polygon(0% 45%, 18% 65%, 50% 25%, 82% 75%, 100% 35%, 100% 100%, 0% 100%);
+    margin-bottom: -1px; /* Prevents tiny layout gaps between elements */
+}
+
+/* ==========================================================================
+   13. FOOTER SECTION
    ========================================================================== */
 .main-footer {
-    background: var(--dark-charcoal);
-    color: rgba(255,255,255,0.7);
-    padding: 56px 24px 32px;
+    background: #4ca1a1; /* Teal background instead of charcoal */
+    color: #ffffff; /* All text switched to crisp white */
+    padding: 10px 24px 50px;
     text-align: center;
 }
 
 .footer-logo img {
-    width: 90px;
-    height: 90px;
+    width: 110px;
+    height: 110px;
     border-radius: 50%;
     object-fit: cover;
-    margin: 0 auto 20px;
-    border: 2px solid var(--primary-teal);
+    margin: 0 auto 25px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.15);
 }
 
 .footer-address {
-    font-size: 0.82rem;
-    line-height: 1.9;
-    color: rgba(255,255,255,0.65);
-    margin-bottom: 6px;
+    font-style: normal;
+    font-size: 0.95rem;
+    font-weight: 600;
+    line-height: 1.6;
+    color: #ffffff;
+    margin-bottom: 8px;
 }
 
 .footer-email a {
-    font-size: 0.82rem;
-    color: rgba(255,255,255,0.65);
-    transition: color 0.3s;
+    font-size: 0.95rem;
+    font-weight: 600;
+    color: #ffffff;
+    text-decoration: none;
+    transition: opacity 0.3s;
 }
-.footer-email a:hover { color: var(--primary-teal); }
+.footer-email a:hover {
+    opacity: 0.8;
+}
 
 .footer-phone {
-    font-size: 0.82rem;
-    color: rgba(255,255,255,0.55);
-    margin: 4px 0 20px;
+    font-size: 0.95rem;
+    font-weight: 600;
+    color: #ffffff;
+    margin: 8px 0 25px;
 }
 
 .footer-socials {
     display: flex;
-    gap: 14px;
+    gap: 12px;
     justify-content: center;
-    margin-bottom: 22px;
+    margin-bottom: 40px;
 }
 
 .footer-socials a {
-    width: 38px;
-    height: 38px;
+    width: 40px;
+    height: 40px;
     border-radius: 50%;
-    background: rgba(255, 255, 255, 0.1);
+    background: #333333; /* Dark/Charcoal circular background for the icons */
     display: flex;
     align-items: center;
     justify-content: center;
-    color: var(--white);
-    font-size: 0.88rem;
-    transition: background 0.3s;
+    color: #ffffff;
+    font-size: 1rem;
+    text-decoration: none;
+    transition: transform 0.3s ease;
 }
-.footer-socials a:hover { background: var(--primary-teal); }
+
+.footer-socials a:hover {
+    transform: scale(1.1);
+}
 
 .footer-copyright {
-    font-size: 0.72rem;
-    color: rgba(255,255,255,0.3);
-    margin-top: 4px;
+    font-size: 0.8rem;
+    font-weight: 700;
+    color: #204b4b; /* Darker teal/black color contrast for the legal text */
+    letter-spacing: 0.5px;
 }
 
 /* ==========================================================================
