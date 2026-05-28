@@ -88,6 +88,13 @@ address { font-style: normal; }
 .btn-outline:hover { background: var(--primary-teal); color: var(--white); }
 
 /* gallery SEE MORE, reviews button */
+.btn-darkteal {
+    background: #1E4041;
+    color: var(--white);
+    border: 2px solid #1E4041;
+}
+.btn-darkteal:hover { background: #163233; border-color: #163233; }
+
 .btn-dark {
     background: var(--dark-charcoal);
     color: var(--white);
@@ -95,7 +102,6 @@ address { font-style: normal; }
 }
 .btn-dark:hover { background: #333; border-color: #333; }
 
-/* small variant */
 .btn-sm { padding: 7px 20px; font-size: 0.72rem; }
 
 /* ==========================================================================
@@ -369,18 +375,16 @@ address { font-style: normal; }
     margin-bottom: 12px;
 }
 
-/* ==========================================================================
-   8. GALLERY SECTION
-   ========================================================================== */
+/* 8. GALLERY SECTION*/
 .gallery-section {
-    background: var(--white);
+    background: #388687;
 }
 
 .gallery-section h2 {
     font-family: var(--font-heading-secondary);
     font-weight: 700;
     font-size: clamp(1.6rem, 3vw, 2.4rem);
-    color: var(--primary-teal);
+    color: var(--white);
     letter-spacing: 2px;
     text-transform: uppercase;
     margin-bottom: 36px;
@@ -522,9 +526,7 @@ address { font-style: normal; }
     line-height: 1.75;
 }
 
-/* ==========================================================================
-   11. MAP SECTION
-   ========================================================================== */
+/*  11. MAP SECTION*/
 .map-section {
     background: var(--light-gray);
 }
@@ -534,7 +536,7 @@ address { font-style: normal; }
     font-weight: 800;
     font-size: clamp(1.5rem, 3vw, 2.2rem);
     color: var(--dark-charcoal);
-    letter-spacing: 2px;
+    letter-spacing: 6px;
     text-transform: uppercase;
     margin-bottom: 28px;
 }
@@ -547,9 +549,7 @@ address { font-style: normal; }
 
 .map-container iframe { display: block; }
 
-/* ==========================================================================
-   12. CTA SECTION
-   ========================================================================== */
+/* 12. CTA SECTION */
 .cta-section {
     background: linear-gradient(135deg, #1a6b5e 0%, #2D8282 55%, #3bbcae 100%);
     color: var(--white);
