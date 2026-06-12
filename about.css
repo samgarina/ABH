@@ -1,201 +1,479 @@
 /* ==========================================================================
-   1. FONTS & VARIABLES
+   ASTURIAS BEACH HOUSE — about.css
+   Matches user mockup specs exactly
    ========================================================================== */
-@import url('https://fonts.googleapis.com/css2?family=Heebo:wght@400;600;700;800&family=Kaisei+Decol:wght@700&family=Kaisei+Tokumin:wght@700&family=Krona+One&display=swap');
 
+/* ---------- 1. CORE PROPERTY DECLARATIONS ---------- */
 :root {
-    --primary-teal:   #2D8282;
-    --dark-teal:      #388687;
-    --soft-gold:      #877638;
-    --dark-charcoal:  #1A1A1A;
-    --light-gray:     #F9F9F9;
-    --white:          #FFFFFF;
+    --brand-teal-primary: #318282;
+    --brand-teal-dark:    #225c5c;
+    --brand-gold-text:    #af8c53;
+    --neutral-dark:       #1a1a1a;
+    --neutral-light-bg:   #f9fbfc;
+    --base-white:         #ffffff;
 
-    --font-nav:               'Krona One', sans-serif;
     --font-heading-primary:   'Kaisei Tokumin', serif;
     --font-heading-secondary: 'Kaisei Decol', serif;
-    --font-body:              'Heebo', sans-serif;
+    --font-primary-headings: 'Heebo', sans-serif;
+    --font-script-accents:   'Dancing Script', cursive;
+    --font-body-content:     'Heebo', sans-serif;
 }
 
-/* ==========================================================================
-   2. RESET & BASE STYLES
-   ========================================================================== */
-*, *::before, *::after { 
-    margin: 0; 
-    padding: 0; 
-    box-sizing: border-box; 
-}
-
-html { 
-    scroll-behavior: smooth; 
-}
-
-body {
-    font-family: var(--font-body);
-    color: #333333;
-    line-height: 1.7;
-    background: var(--white);
-}
-
-img { 
-    display: block; 
-    max-width: 100%; 
-}
-
-a { 
-    text-decoration: none; 
-    color: inherit; 
-}
-
-ul { 
-    list-style: none; 
-}
-
-/* ==========================================================================
-   3. UTILITIES / GLOBAL COMPONENTS
-   ========================================================================== */
-.container {
-    width: 90%;
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 60px 0;
-}
-
-.text-center { 
-    text-align: center; 
-}
-
-/* --- BUTTONS --- */
+/* ---------- 2. UTILITY BUTTON ARCHITECTURE ---------- */
 .btn {
     display: inline-block;
-    font-family: var(--font-body);
-    font-weight: 600;
-    font-size: 0.78rem;
+    font-family: var(--font-body-content);
+    font-weight: 700;
+    font-size: 0.75rem;
     letter-spacing: 1.5px;
     text-transform: uppercase;
-    padding: 10px 28px;
-    border-radius: 30px;
+    padding: 12px 36px;
+    border-radius: 25px;
     cursor: pointer;
-    transition: background 0.3s, color 0.3s, border-color 0.3s, transform 0.2s;
+    text-align: center;
+    transition: all 0.3s ease;
 }
 
-.btn:hover { 
-    transform: translateY(-2px); 
+.btn-hero {
+    background-color: var(--brand-teal-primary);
+    color: var(--base-white);
+    border: 2px solid var(--brand-teal-primary);
+}
+.btn-hero:hover {
+    background-color: var(--brand-teal-dark);
+    border-color: var(--brand-teal-dark);
 }
 
-.btn-primary {
-    background: var(--primary-teal);
-    color: var(--white);
-    border: 2px solid var(--primary-teal);
+.btn-teal {
+    background-color: var(--brand-teal-primary);
+    color: var(--base-white);
+    border: 2px solid var(--brand-teal-primary);
+}
+.btn-teal:hover {
+    background-color: var(--brand-teal-dark);
+    border-color: var(--brand-teal-dark);
 }
 
-.btn-primary:hover { 
-    background: var(--dark-teal); 
-    border-color: var(--dark-teal); 
+.btn-outline-white {
+    background-color: transparent;
+    color: var(--base-white);
+    border: 2px solid var(--base-white);
+}
+.btn-outline-white:hover {
+    background-color: var(--base-white);
+    color: var(--neutral-dark);
 }
 
+.btn-teal-action {
+    background-color: var(--brand-teal-primary);
+    color: var(--base-white);
+    border: none;
+    font-size: 0.82rem;
+    padding: 12px 32px;
+}
+.btn-teal-action:hover {
+    background-color: var(--brand-teal-dark);
+}
+
+/* ---------- 3. HERO VIEWPORT AREA ---------- */
 /* ==========================================================================
-   4. HERO HERO-SECTION & NAVBAR
+   UPDATED HERO VIEWPORT CONFIGURATION (Eliminates Bottom Whitespace)
    ========================================================================== */
 .hero-section {
     position: relative;
-    min-height: 100vh;
+    height: 100vh;      /* Forces it to take up exactly 100% of the screen height */
+    width: 100%;
     display: flex;
     flex-direction: column;
+    overflow: hidden;   /* Prevents any rogue elements from creating scrollbars */
 }
 
-/* ---- HERO CONTENT ---- */
 .hero-content {
-    flex: 1;
     position: relative;
+    width: 100%;
+    height: 100%;
+    flex: 1;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    overflow: hidden;
+    text-align: center;
+    color: var(--base-white);
 }
 
-.hero-content img {
+/* This forces your image element to stretch and occupy the entire background */
+.hero-video {
     position: absolute;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    object-fit: cover;
-    object-position: center;
-    z-index: 1;
+    object-fit: cover;       /* Dynamically crops and fills space without distorting */
+    object-position: center; /* Keeps the middle of your image focused */
+    z-index: 1; 
 }
 
 .hero-overlay {
     position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    z-index: 2;
-    background: linear-gradient(to bottom, rgba(0, 0, 0, 0.25) 0%, rgba(0, 0, 0, 0.6) 100%);
+    inset: 0;
+    z-index: 2; /* Sits directly on top of the image */
+    background: linear-gradient(to bottom, rgba(0, 0, 0, 0.4) 0%, rgba(0, 0, 0, 0.6) 100%);
 }
 
+/* Text wrapper layer */
 .hero-text {
     position: relative;
-    z-index: 3;
-    text-align: center;
-    padding: 100px 24px 60px;
-    color: var(--white);
+    z-index: 3; /* Placed safely on top of image and overlay layers */
 }
 
 .hero-text h1 {
     font-family: var(--font-heading-primary);
-    font-weight: 700;
-    font-size: clamp(2.2rem, 5.5vw, 4rem);
-    letter-spacing: 4px;
+    font-weight: 600;
+    font-size: clamp(2.5rem, 6vw, 4.2rem);
+    letter-spacing: 5px;
     text-transform: uppercase;
-    text-shadow: 0 2px 24px rgba(0,0,0,0.65);
-    margin-bottom: 6px;
-    line-height: 1.15;
+    text-shadow: 0 2px 24px rgba(0,0,0,0.6);
+    margin-bottom: 8px;
+    line-height: 1.1;
+    color: var(--base-white);
 }
 
-.hero-text .sub-brand {
+.sub-brand {
+    font-family: var(--font-script-accents);
+    font-size: clamp(1.5rem, 3vw, 2.2rem);
+    font-weight: 400;
+    color: rgba(255,255,255,0.9);
+    margin-bottom: 28px;
+}
+
+/* ---------- 4. FLEX ROWS (STORY LINES) ---------- */
+.story-section {
+    padding: 80px 0;
+    background-color: var(--base-white);
+}
+.story-section.bg-light {
+    background-color: var(--neutral-light-bg);
+}
+
+.story-container {
+    width: 85%;
+    max-width: 1140px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    gap: 70px;
+}
+.story-container.row-reverse {
+    flex-direction: row-reverse;
+}
+
+.story-image-block {
+    flex: 1;
+}
+.story-image-block img {
+    width: 100%;
+    max-width: 480px;
+    height: 440px;
+    object-fit: cover;
+    border-radius: 24px;
+    margin: 0 auto;
+}
+
+.story-text-block {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.story-heading {
     font-family: var(--font-heading-primary);
-    font-size: clamp(1.1rem, 2.5vw, 1.6rem);
-    color: rgba(255,255,255,0.85);
+    font-size: clamp(1.6rem, 2.5vw, 2.1rem);
+    font-weight: 500;
+    color: var(--brand-teal-primary);
+    letter-spacing: 2px;
+    line-height: 1.3;
+    margin-bottom: 25px;
+}
+
+.story-body p {
+    font-family: var(--font-body-content);
+    font-size: 0.92rem;
+    line-height: 1.7;
+    color: #444444;
+    margin-bottom: 20px;
+}
+
+.story-btn-block {
+    margin-top: 15px;
+}
+
+/* ---------- 5. CENTRAL HOUSING PREVIEW MODALS ---------- */
+.spotlight-banner {
+    position: relative;
+    /* Changed the background path to use the high-quality dining sunset view image */
+    background: url('images/spotlight-image.png') center center / cover no-repeat;
+    padding: 120px 0; /* Balanced spacing around content elements */
+    background-attachment: scroll; /* Keeps background tracking smoothly with scroll */
+}
+
+.spotlight-overlay {
+    position: absolute;
+    inset: 0;
+    /* Soft dark gradient that preserves the vibrant sunset colors behind the text */
+    background: linear-gradient(to bottom, rgba(0, 0, 0, 0.05) 0%, rgba(0, 0, 0, 0.35) 100%);
+    z-index: 1;
+}
+
+.spotlight-container {
+    position: relative;
+    z-index: 2; /* Forces text to sit safely above the background image and overlay layer */
+    width: 90%;
+    max-width: 1140px;
+    margin: 0 auto;
+    text-align: center;
+    color: var(--base-white);
+}
+
+.spotlight-main-title {
+    font-family: var(--font-heading-primary);
+    font-weight: 700;
+    font-size: clamp(1.8rem, 4.5vw, 3.4rem); /* Responsive typography matching mockup proportions */
+    letter-spacing: 3px;
+    margin-bottom: 4px;
+    text-shadow: 0 2px 15px rgba(0, 0, 0, 0.5);
+}
+
+.spotlight-sub-title {
+    font-family: var(--font-heading-secondary);
+    font-size: clamp(1.1rem, 2vw, 1.4rem);
+    margin-bottom: 60px;
+    color: rgba(255, 255, 255, 0.9);
+}
+
+.spotlight-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+    margin-bottom: 50px;
+}
+
+.spotlight-card {
+    /* Transparent frosted glass card look matching the image provided */
+    background: rgba(255, 255, 255, 0.08);
+    border: 1px solid rgba(255, 255, 255, 0.302);
+    border-radius: 16px;
+    padding: 40px 24px;
+    backdrop-filter: blur(2px);
+    -webkit-backdrop-filter: blur(2px);
+    text-align: center;
+    transition: transform 0.3s ease;
+}
+
+.spotlight-card:hover {
+    transform: translateY(-4px);
+    background: rgba(255, 255, 255, 0.12);
+}
+
+.spotlight-card h3 {
+    font-family: var(--font-primary-headings);
+    font-size: 1.15rem;
+    font-weight: 600;
     letter-spacing: 1px;
-    margin-bottom: 32px;
+    margin-bottom: 14px;
+    text-transform: capitalize;
+}
+
+.spotlight-card p {
+    font-family: var(--font-body-content);
+    font-size: 0.85rem;
+    line-height: 1.6;
+    color: rgba(255, 255, 255, 0.95);
+}
+
+.spotlight-action {
+    margin-top: 20px;
+}
+
+.cta-section {
+    background: #ffffff; /* White background matching your image */
+    padding: 80px 0 40px;
+    text-align: center;
+}
+
+.cta-section h2 {
+    font-family: var(--font-heading-primary), sans-serif; /* Changed from script to match image */
+    font-size: clamp(2.2rem, 5vw, 3.2rem);
+    font-weight: 700;
+    line-height: 1.25;
+    margin-bottom: 25px;
+    color: #3b8b8b; /* Teal color for 'Spend your Day in' */
+}
+
+.cta-section h2 .brand-gold {
+    color: #9e813b; /* Deep gold color for 'Asturias Beach House' */
+    display: block;
+    margin-top: 5px;
+}
+
+.cta-tagline {
+    font-size: 1.1rem;
+    color: #000000; /* Crisp black text */
+    font-weight: 700; /* Bold font weight matching the picture */
+    margin-bottom: 35px;
+    letter-spacing: 0.5px;
+}
+
+.cta-buttons {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+/* override teal buttons inside teal bg to be white-bordered */
+.cta-section .btn-teal {
+    background: #3b8b8b; /* Solid teal background */
+    color: #ffffff;
+    border: none;
+    padding: 12px 36px;
+    font-size: 1rem;
+    font-weight: 600;
+    border-radius: 8px; /* Smooth rounded corners instead of pills */
+    text-decoration: none;
+    transition: background 0.3s ease;
+}
+
+.cta-section .btn-teal:hover {
+    background: var(--white);
+    color: var(--dark-teal);
 }
 
 /* ==========================================================================
-   5. RESPONSIVE DESIGN (MOBILE)
+   GEOMETRIC SHAPE DIVIDER
    ========================================================================== */
-@media (max-width: 700px) {
-    .navbar { 
-        gap: 14px; 
-        padding: 12px 20px; 
-        flex-wrap: wrap; 
-    }
-    .nav-links { 
-        gap: 12px; 
-    }
-    .nav-links a { 
-        font-size: 0.58rem; 
-    }
-    .left-nav, .right-nav { 
-        display: none; /* Collapses text side navs on micro displays */
-    } 
+.geo-divider {
+    background: #4ca1a1; /* Matches the main footer background color */
+    height: 140px;
+    width: 100%;
+    /* Creates the exact jagged landscape/mountain peaks matching the picture */
+    clip-path: polygon(0% 45%, 18% 65%, 50% 25%, 82% 75%, 100% 35%, 100% 100%, 0% 100%);
+    margin-bottom: -1px; /* Prevents tiny layout gaps between elements */
 }
 
-/* 
-6. DISSOLVE ANIMATION (EXCLUDING NAVBAR)*/
-.fade-in-page {
-    opacity: 0;
-    width: 100%;
-    height: 100%;
+/* ==========================================================================
+   13. FOOTER SECTION
+   ========================================================================== */
+.main-footer {
+    background: #4ca1a1; /* Teal background instead of charcoal */
+    color: #ffffff; /* All text switched to crisp white */
+    padding: 10px 24px 50px;
+    text-align: center;
+}
+
+.footer-logo img {
+    width: 110px;
+    height: 110px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin: 0 auto 25px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.15);
+}
+
+.footer-address {
+    font-style: normal;
+    font-size: 0.95rem;
+    font-weight: 600;
+    line-height: 1.6;
+    color: #ffffff;
+    margin-bottom: 8px;
+}
+
+.footer-email a {
+    font-size: 0.95rem;
+    font-weight: 600;
+    color: #ffffff;
+    text-decoration: none;
+    transition: opacity 0.3s;
+}
+.footer-email a:hover {
+    opacity: 0.8;
+}
+
+.footer-phone {
+    font-size: 0.95rem;
+    font-weight: 600;
+    color: #ffffff;
+    margin: 8px 0 25px;
+}
+
+.footer-socials {
     display: flex;
-    flex-direction: column;
+    gap: 12px;
+    justify-content: center;
+    margin-bottom: 40px;
+}
+
+.footer-socials a {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background: #333333; /* Dark/Charcoal circular background for the icons */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #ffffff;
+    font-size: 1rem;
+    text-decoration: none;
+    transition: transform 0.3s ease;
+}
+
+.footer-socials a:hover {
+    transform: scale(1.1);
+}
+
+.footer-copyright {
+    font-size: 0.8rem;
+    font-weight: 700;
+    color: #204b4b; /* Darker teal/black color contrast for the legal text */
+    letter-spacing: 0.5px;
+}
+
+/* ---------- 8. MEDIA QUERIES (RESPONSIVENESS) ---------- */
+@media (max-width: 992px) {
+    .story-container, 
+    .story-container.row-reverse {
+        flex-direction: column;
+        gap: 40px;
+        text-align: center;
+    }
+    .story-image-block img {
+        max-width: 100%;
+        height: 340px;
+    }
+    .spotlight-grid {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+}
+
+@media (max-width: 576px) {
+    .action-buttons {
+        flex-direction: column;
+        align-items: center;
+        gap: 15px;
+    }
+    .btn {
+        width: 80%;
+        max-width: 280px;
+    }
+}
+
+.fade-in-element {
+    opacity: 0;
     will-change: opacity;
 }
 
-/* Transitions only the wrapped content over 300ms */
-.fade-in-page.active {
+.fade-in-element.active {
     opacity: 1;
     transition: opacity 1s ease-out;
 }
