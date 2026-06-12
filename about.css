@@ -1,0 +1,201 @@
+/* ==========================================================================
+   1. FONTS & VARIABLES
+   ========================================================================== */
+@import url('https://fonts.googleapis.com/css2?family=Heebo:wght@400;600;700;800&family=Kaisei+Decol:wght@700&family=Kaisei+Tokumin:wght@700&family=Krona+One&display=swap');
+
+:root {
+    --primary-teal:   #2D8282;
+    --dark-teal:      #388687;
+    --soft-gold:      #877638;
+    --dark-charcoal:  #1A1A1A;
+    --light-gray:     #F9F9F9;
+    --white:          #FFFFFF;
+
+    --font-nav:               'Krona One', sans-serif;
+    --font-heading-primary:   'Kaisei Tokumin', serif;
+    --font-heading-secondary: 'Kaisei Decol', serif;
+    --font-body:              'Heebo', sans-serif;
+}
+
+/* ==========================================================================
+   2. RESET & BASE STYLES
+   ========================================================================== */
+*, *::before, *::after { 
+    margin: 0; 
+    padding: 0; 
+    box-sizing: border-box; 
+}
+
+html { 
+    scroll-behavior: smooth; 
+}
+
+body {
+    font-family: var(--font-body);
+    color: #333333;
+    line-height: 1.7;
+    background: var(--white);
+}
+
+img { 
+    display: block; 
+    max-width: 100%; 
+}
+
+a { 
+    text-decoration: none; 
+    color: inherit; 
+}
+
+ul { 
+    list-style: none; 
+}
+
+/* ==========================================================================
+   3. UTILITIES / GLOBAL COMPONENTS
+   ========================================================================== */
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 60px 0;
+}
+
+.text-center { 
+    text-align: center; 
+}
+
+/* --- BUTTONS --- */
+.btn {
+    display: inline-block;
+    font-family: var(--font-body);
+    font-weight: 600;
+    font-size: 0.78rem;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    padding: 10px 28px;
+    border-radius: 30px;
+    cursor: pointer;
+    transition: background 0.3s, color 0.3s, border-color 0.3s, transform 0.2s;
+}
+
+.btn:hover { 
+    transform: translateY(-2px); 
+}
+
+.btn-primary {
+    background: var(--primary-teal);
+    color: var(--white);
+    border: 2px solid var(--primary-teal);
+}
+
+.btn-primary:hover { 
+    background: var(--dark-teal); 
+    border-color: var(--dark-teal); 
+}
+
+/* ==========================================================================
+   4. HERO HERO-SECTION & NAVBAR
+   ========================================================================== */
+.hero-section {
+    position: relative;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+/* ---- HERO CONTENT ---- */
+.hero-content {
+    flex: 1;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+}
+
+.hero-content img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    z-index: 1;
+}
+
+.hero-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 2;
+    background: linear-gradient(to bottom, rgba(0, 0, 0, 0.25) 0%, rgba(0, 0, 0, 0.6) 100%);
+}
+
+.hero-text {
+    position: relative;
+    z-index: 3;
+    text-align: center;
+    padding: 100px 24px 60px;
+    color: var(--white);
+}
+
+.hero-text h1 {
+    font-family: var(--font-heading-primary);
+    font-weight: 700;
+    font-size: clamp(2.2rem, 5.5vw, 4rem);
+    letter-spacing: 4px;
+    text-transform: uppercase;
+    text-shadow: 0 2px 24px rgba(0,0,0,0.65);
+    margin-bottom: 6px;
+    line-height: 1.15;
+}
+
+.hero-text .sub-brand {
+    font-family: var(--font-heading-primary);
+    font-size: clamp(1.1rem, 2.5vw, 1.6rem);
+    color: rgba(255,255,255,0.85);
+    letter-spacing: 1px;
+    margin-bottom: 32px;
+}
+
+/* ==========================================================================
+   5. RESPONSIVE DESIGN (MOBILE)
+   ========================================================================== */
+@media (max-width: 700px) {
+    .navbar { 
+        gap: 14px; 
+        padding: 12px 20px; 
+        flex-wrap: wrap; 
+    }
+    .nav-links { 
+        gap: 12px; 
+    }
+    .nav-links a { 
+        font-size: 0.58rem; 
+    }
+    .left-nav, .right-nav { 
+        display: none; /* Collapses text side navs on micro displays */
+    } 
+}
+
+/* 
+6. DISSOLVE ANIMATION (EXCLUDING NAVBAR)*/
+.fade-in-page {
+    opacity: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    will-change: opacity;
+}
+
+/* Transitions only the wrapped content over 300ms */
+.fade-in-page.active {
+    opacity: 1;
+    transition: opacity 1s ease-out;
+}

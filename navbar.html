@@ -5,9 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="icon" type="image/x-icon" href="images/favicon.ico">
     <title>Asturias Beach House | By Blissful Creations</title>
-    <!-- Note: home.css gives us our default core styles, about.css gives us custom overrides -->
-    <link rel="stylesheet" href="home.css">
-    <link rel="stylesheet" href="about.css">
+    <link rel="stylesheet" href="navbar.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 
     <meta property="og:url" content="https://www.asturiasbeachhouse.com/">
@@ -17,22 +15,24 @@
     <meta property="og:image" content="https://rp.cdn-website.com/f6d0f1ff/dms3rep/multi/opt/2024_THEBEACHHOUSE_LOGO_LOWRES_BY_EXITHAMSTER_106-1920w.JPG">
 </head>
 <body>
-
-    <!-- GLOBAL NAVBAR PLACEHOLDER -->
-    <div id="global-navbar"></div>
-
-    <header class="hero-section">
-        <div class="hero-content fade-in-element">
-            <img src="images/about-image.png" class="hero-video" alt="Beautiful scenery at Asturias Beach House">
-            <div class="hero-overlay"></div>
-            <div class="hero-text">
-                <h1>OUR STORY</h1>
-                <h2 class="sub-brand">Your home away from home</h2>
-                <a href="#contact" class="btn btn-primary">CONTACT US</a> 
-            </div>
-        </div>
-    </header>
-
-    <script src="global.js"></script>
+<nav class="navbar">
+    <ul class="nav-links left-nav">
+        <li><a href="home.html">HOME</a></li>
+        <li><a href="about.html">ABOUT US</a></li>
+        <li><a href="rooms.html">ROOMS</a></li>
+        <li><a href="dining.html">DINING</a></li>
+    </ul>
+    
+    <div class="nav-logo">
+        <img src="images/1616.png" height="50" width="50" alt="Asturias Beach House Logo">
+    </div>
+    
+    <ul class="nav-links right-nav">
+        <li><a href="gallery.html">GALLERY</a></li>
+        <li><a href="route.html">ROUTE</a></li>
+        <li><a href="faqs.html">FAQS</a></li>
+        <li><a href="activities.html">ACTIVITIES</a></li>
+    </ul>
+</nav>
 </body>
 </html>

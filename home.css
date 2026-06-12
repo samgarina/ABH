@@ -117,49 +117,6 @@ address { font-style: normal; }
     flex-direction: column;
 }
 
-/* ---- NAVBAR ---- */
-.navbar {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    z-index: 999;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 40px;
-    padding: 16px 40px;
-    background: rgba(0, 0, 0, 0.52);
-    backdrop-filter: blur(6px);
-    -webkit-backdrop-filter: blur(6px);
-}
-
-.nav-links {
-    display: flex;
-    gap: 28px;
-    align-items: center;
-}
-
-.nav-links a {
-    font-family: var(--font-nav);
-    font-size: 0.68rem;
-    font-weight: 400;
-    letter-spacing: 1.2px;
-    color: var(--white);
-    text-transform: uppercase;
-    transition: color 0.3s;
-}
-.nav-links a:hover { color: var(--primary-teal); }
-
-.nav-logo img {
-    width: 60px;
-    height: 60px;
-    border-radius: 50%;
-    object-fit: cover;
-    border: 2px solid rgba(255,255,255,0.6);
-    display: block;
-}
-
 /* ---- HERO CONTENT ---- */
 .hero-content {
     flex: 1;
@@ -778,7 +735,7 @@ body {
 .hero-content {
     position: relative; /* Acts as the anchor for the absolute positioned elements */
     width: 100%;
-    height: 100hv; /* You can also use 100vh to make it full screen height */
+    height: 100vh; /* You can also use 100vh to make it full screen height */
     display: flex;
     align-items: center; /* Centers content vertically */
     justify-content: center; /* Centers content horizontally */
@@ -870,4 +827,15 @@ body {
 .btn {
     font-family: var(--font-body);
     font-weight: 600; /* Heebo SemiBold for clean button interfaces */
+}
+
+/* 15. DISSOLVE ANIMATION (EXCLUDING FIXED NAVBAR) */
+.fade-in-element {
+    opacity: 0;
+    will-change: opacity;
+}
+
+.fade-in-element.active {
+    opacity: 1;
+    transition: opacity 1s ease-out;
 }
