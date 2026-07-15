@@ -45,6 +45,7 @@
 }
 
 .btn-teal {
+    font-family: var(--font-heading-primary);
     background-color: var(--brand-teal-primary);
     color: var(--base-white);
     border: 2px solid var(--brand-teal-primary);
@@ -68,6 +69,7 @@
     background-color: var(--brand-teal-primary);
     color: var(--base-white);
     border: none;
+    font-family: var(--font-heading-primary);
     font-size: 0.82rem;
     padding: 12px 32px;
 }

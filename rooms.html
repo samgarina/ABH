@@ -3,25 +3,168 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Asturias Beach House</title>
+    <link rel="icon" type="image/x-icon" href="images/favicon.ico">
+    <title>Rooms | Asturias Beach House</title>
+    
+    <link rel="stylesheet" href="home.css">
+    <link rel="stylesheet" href="rooms.css">
+    <link rel="stylesheet" href="navbar.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 
-    <!-- Facebook Meta Tags -->
     <meta property="og:url" content="https://www.asturiasbeachhouse.com/">
     <meta property="og:type" content="website">
     <meta property="og:title" content="Asturias Beach House by Blissful Creations - Your Perfect Getaway">
     <meta property="og:description" content="Experience the beauty of Asturias with our beach house">
-    <meta property="og:image" content="https://rp.cdn-website.com/f6d0f1ff/dms3rep/multi/opt/2024_THEBEACHHOUSE_LOGO_LOWRES_BY_EXITHAMSTER_106-1920w.JPG"> <!-- To be Replaced -->
+    <meta property="og:image" content="https://rp.cdn-website.com/f6d0f1ff/dms3rep/multi/opt/2024_THEBEACHHOUSE_LOGO_LOWRES_BY_EXITHAMSTER_106-1920w.JPG">
 </head>
 <body>
-    <nav>
-        <a href="home.html">Home</a>
-        <a href="about.html">About Us</a>
-        <a href="rooms.html">Rooms</a>
-        <a href="gallery.html">Gallery</a>
-        <a href="route.html">Route</a>
-        <a href="faqs.html">FAQs</a>
-        <a href="dining.html">Dining</a>
-        <a href="activities.html">Activities</a>
-    </nav>
-    </body>
+
+    <div id="global-navbar"></div>
+
+    <header class="hero-section fade-in-element">
+        <div class="hero-content">
+            <img src="images/rooms-header.png" class="hero-video" alt="Cozy bedroom preview at Asturias Beach House">
+            <div class="hero-overlay"></div>
+            
+            <div class="hero-text">
+                <h1>OUR ROOMS</h1>
+                <h2 class="sub-brand">Available to suit your needs</h2>
+                <a href="#contact" class="btn btn-primary">CONTACT US</a> 
+            </div>
+        </div>
+    </header>
+
+    <main class="rooms-page fade-in-element">
+
+        <section class="room-listing fade-in-element" id="single-room">
+            <div class="room-container">
+                <div class="room-photo">
+                    <img src="images/rooms-single.png" alt="Single Room interior featuring pristine bedding options">
+                </div>
+                <div class="room-details">
+                    <h2 class="room-title">SINGLE ROOM</h2>
+                    <ul class="room-amenities">
+                        <li>1 Double sized bed</li>
+                        <li>Wooden terrace</li>
+                        <li>Well-equipped bathroom</li>
+                        <li>Air conditioning</li>
+                        <li>Television</li>
+                        <li>Wi-Fi</li>
+                    </ul>
+                    <div class="room-pricing-box">
+                        <div class="price-row">
+                            <span class="day-label">Weekdays:</span>
+                            <span class="price-details">With Breakfast – ₱ 1,500.00<br>Without Breakfast – ₱ 1,200.00</span>
+                        </div>
+                        <div class="price-row">
+                            <span class="day-label">Weekends:</span>
+                            <span class="price-details">With Breakfast – ₱ 1,800.00<br>Without Breakfast – ₱ 1,500.00</span>
+                        </div>
+                    </div>
+                    <a href="#check-single" class="btn btn-teal">CHECK AVAILABILITY</a>
+                </div>
+            </div>
+        </section>
+
+        <section class="room-listing room-listing--alt fade-in-element" id="twin-room">
+            <div class="room-container reverse-row">
+                <div class="room-details">
+                    <h2 class="room-title text-left-heading">TWIN ROOM</h2>
+                    <ul class="room-amenities">
+                        <li>2 Double sized bed</li>
+                        <li>Wooden terrace</li>
+                        <li>Well-equipped bathroom</li>
+                        <li>Air conditioning</li>
+                        <li>Television</li>
+                        <li>Wi-Fi</li>
+                    </ul>
+                    <div class="room-pricing-box">
+                        <div class="price-row">
+                            <span class="day-label">Weekdays:</span>
+                            <span class="price-details">With Breakfast – ₱ 2,000.00<br>Without Breakfast – ₱ 1,400.00</span>
+                        </div>
+                        <div class="price-row">
+                            <span class="day-label">Weekends:</span>
+                            <span class="price-details">With Breakfast – ₱ 2,350.00<br>Without Breakfast – ₱ 1,750.00</span>
+                        </div>
+                    </div>
+                    <a href="#check-twin" class="btn btn-teal">CHECK AVAILABILITY</a>
+                </div>
+                <div class="room-photo">
+                    <img src="images/rooms-twin.png" alt="Twin Room setup with dual bedding spaces">
+                </div>
+            </div>
+        </section>
+
+        <section class="room-listing fade-in-element" id="barkada-room">
+            <div class="room-container">
+                <div class="room-photo">
+                    <img src="images/rooms-barkada.png" alt="Spacious Barkada Room with rustic wooden bunk beds">
+                </div>
+                <div class="room-details">
+                    <h2 class="room-title">BARKADA ROOM</h2>
+                    <ul class="room-amenities">
+                        <li>2 Double Bunk bed</li>
+                        <li>Wooden terrace</li>
+                        <li>Well-equipped bathroom</li>
+                        <li>Air conditioning</li>
+                        <li>Television</li>
+                        <li>Wi-Fi</li>
+                    </ul>
+                    <div class="room-pricing-box">
+                        <div class="price-row">
+                            <span class="day-label">Weekdays:</span>
+                            <span class="price-details">With Breakfast – ₱ 2,900.00<br>Without Breakfast – ₱ 2,000.00</span>
+                        </div>
+                        <div class="price-row">
+                            <span class="day-label">Weekends:</span>
+                            <span class="price-details">With Breakfast – ₱ 3,400.00<br>Without Breakfast – ₱ 2,500.00</span>
+                        </div>
+                    </div>
+                    <a href="#check-barkada" class="btn btn-teal">CHECK AVAILABILITY</a>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+   <section class="cta-section fade-in-element">
+        <div class="container text-center">
+            <h2>Spend your Day in <br><span class="brand-gold">Asturias Beach House</span></h2>
+            <p class="cta-tagline">We are here to help you.</p>
+            <div class="cta-buttons">
+                <a href="#inquire" class="btn btn-darkteal">Inquire</a>
+                <a href="#ask" class="btn btn-darkteal">Ask us anything</a>
+            </div>
+        </div>
+    </section>
+
+    <div class="geo-divider fade-in-element"></div>
+
+    <footer class="main-footer fade-in-element">
+        <div class="container text-center">
+            <div class="footer-logo">
+                <img src="images/bh-logo.png" alt="Asturias Beach House Circular Logo">
+            </div>
+            <address class="footer-address">
+                Sitio San Juan, Brgy. Owak,<br>
+                Asturias, Cebu, Philippines, 6042
+            </address>
+            <p class="footer-email">
+                <a href="mailto:asturiasbeachhouse@gmail.com">asturiasbeachhouse@gmail.com</a>
+            </p>
+            <p class="footer-phone">General Inquiries (+63) 992 708 2881</p>
+            <div class="footer-socials">
+                <a href="https://facebook.com" target="_blank" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+                <a href="https://messenger.com" target="_blank" aria-label="Messenger"><i class="fa-brands fa-facebook-messenger"></i></a>
+                <a href="https://instagram.com" target="_blank" aria-label="Airbnb"><i class="fa-brands fa-airbnb"></i></a>
+            </div>
+            <p class="footer-copyright">
+                © 2026 Asturias Beach House by Blissful Creations / All Rights Reserved
+            </p>
+        </div>
+    </footer>
+
+    <script src="global.js"></script>
+</body>
 </html>

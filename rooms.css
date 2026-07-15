@@ -1,0 +1,420 @@
+/* ==========================================================================
+   ASTURIAS BEACH HOUSE — INTEGRATED SIZING STYLE IMPLEMENTATION
+   ========================================================================== */
+
+@import url('https://fonts.googleapis.com/css2?family=Heebo:wght@300;400;500;600;700&family=Krona+One&family=Playfair+Display:ital,wght@0,600;0,700;1,400&family=Caveat:wght@700&display=swap');
+
+:root {
+    --primary-teal:   #2D8282;
+    --dark-teal:      #1F5B5B;
+    --dark-charcoal:  #2C2C2C;
+    --base-white:     #FFFFFF;
+    --text-muted:     #555555;
+    
+    /* Global Site Typography Mapping Rules */
+    --font-nav:              'Krona One', sans-serif;
+    --font-primary-headings: 'Playfair Display', serif;
+    --font-script-accents:   'Caveat', cursive;
+    --font-body-content:     'Heebo', sans-serif;
+}
+
+/* ---------- RESET LAYOUT ENGINES ---------- */
+*, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body {
+    font-family: var(--font-body-content);
+    background-color: var(--base-white);
+    color: var(--dark-charcoal);
+    overflow-x: hidden;
+    -webkit-font-smoothing: antialiased;
+}
+
+/* ---------- UNIFIED COMPONENT BUTTON ACTIONS ---------- */
+.btn {
+    display: inline-block;
+    font-family: var(--font-body-content);
+    font-weight: 500;
+    font-size: 0.75rem;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    padding: 10px 28px;
+    border-radius: 25px;
+    transition: all 0.3s ease;
+    text-decoration: none;
+    text-align: center;
+}
+
+.btn-primary {
+    background: var(--primary-teal);
+    color: var(--base-white);
+    border: 1px solid var(--primary-teal);
+}
+.btn-primary:hover {
+    background: var(--dark-teal);
+    border-color: var(--dark-teal);
+}
+
+.btn-teal {
+    background: transparent;
+    color: var(--primary-teal);
+    border: 1px solid var(--primary-teal);
+    border-radius: 20px;
+    padding: 8px 22px;
+}
+.btn-teal:hover {
+    background: var(--primary-teal);
+    color: var(--base-white);
+}
+
+.btn-cta {
+    background: var(--primary-teal);
+    color: var(--base-white);
+    border: none;
+    border-radius: 6px;
+    padding: 10px 32px;
+    font-size: 0.85rem;
+    text-transform: none;
+    letter-spacing: 0.5px;
+}
+.btn-cta:hover {
+    background: var(--dark-teal);
+    transform: translateY(-1px);
+}
+
+/* ==========================================================================
+   HERO / VIEWPORT SECTION CONFIGURATION (Matches home.html Height Exactly)
+   ========================================================================== */
+.hero-section {
+    position: relative;
+    height: 100vh; /* Locked full height eliminates alignment shifting */
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+}
+
+.hero-content {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: var(--base-white);
+}
+
+.hero-video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    z-index: 1;
+}
+
+.hero-overlay {
+    position: absolute;
+    inset: 0;
+    z-index: 2;
+    background: linear-gradient(to bottom, rgba(0, 0, 0, 0.45) 0%, rgba(0, 0, 0, 0.6) 100%);
+}
+
+.hero-text {
+    position: relative;
+    z-index: 3;
+}
+
+.hero-text h1 {
+    font-family: var(--font-primary-headings);
+    font-weight: 700;
+    font-size: clamp(2.5rem, 6vw, 4.5rem);
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    margin-bottom: 4px;
+}
+
+.sub-brand {
+    font-family: var(--font-script-accents);
+    font-size: clamp(1.6rem, 3vw, 2.4rem);
+    font-weight: 400;
+    color: rgba(255, 255, 255, 0.95);
+    margin-bottom: 30px;
+}
+
+/* ==========================================================================
+   ROOM CARDS DISPLAY ROWS LISTING ARRANGEMENT
+   ========================================================================== */
+.rooms-page {
+    padding: 60px 0;
+    background-color: var(--base-white);
+}
+
+.room-listing {
+    padding: 50px 0;
+    width: 100%;
+}
+
+.room-container {
+    width: 85%;
+    max-width: 1100px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 80px;
+    align-items: center;
+}
+
+/* Smooth alternative row orientation inversion rule overrides */
+.reverse-row {
+    grid-template-columns: 1.1fr 0.9fr;
+}
+
+.room-photo img {
+    width: 100%;
+    height: 480px;
+    object-fit: cover;
+    border-radius: 24px;
+}
+
+.room-title {
+    font-family: var(--font-primary-headings);
+    color: var(--primary-teal);
+    font-size: 3rem;
+    font-weight: 400;
+    letter-spacing: 4px;
+    margin-bottom: 24px;
+}
+
+.text-left-heading {
+    text-align: left;
+}
+
+.room-amenities {
+    list-style: none;
+    margin-bottom: 24px;
+}
+
+.room-amenities li {
+    font-family: var(--font-body-content);
+    font-size: 0.95rem;
+    color: var(--dark-charcoal);
+    margin-bottom: 6px;
+    position: relative;
+    padding-left: 15px;
+}
+
+/* Renders clean, unified listing dots matching the design */
+.room-amenities li::before {
+    content: "•";
+    position: absolute;
+    left: 0;
+    color: var(--dark-charcoal);
+}
+
+/* Thin card outline matrix mimicking presentation borders */
+.room-pricing-box {
+    border: 1px solid #A5C3C3;
+    border-radius: 14px;
+    padding: 16px 20px;
+    margin-bottom: 24px;
+    max-width: 440px;
+}
+
+.price-row {
+    display: flex;
+    margin-bottom: 12px;
+    font-size: 0.88rem;
+    line-height: 1.5;
+}
+
+.price-row:last-child {
+    margin-bottom: 0;
+}
+
+.day-label {
+    font-weight: 700;
+    font-style: italic;
+    width: 90px;
+    flex-shrink: 0;
+}
+
+.price-details {
+    font-weight: 400;
+}
+
+/* ==========================================================================
+   CALL TO ACTION MODULE
+   ========================================================================== */
+.cta-section {
+    background: #ffffff; /* White background matching your image */
+    padding: 80px 0 40px;
+    text-align: center;
+}
+
+.cta-section h2 {
+    font-family: var(--font-heading-primary), sans-serif; /* Changed from script to match image */
+    font-size: clamp(2.2rem, 5vw, 3.2rem);
+    font-weight: 700;
+    line-height: 1.25;
+    margin-bottom: 25px;
+    color: #3b8b8b; /* Teal color for 'Spend your Day in' */
+}
+
+.cta-section h2 .brand-gold {
+    color: #9e813b; /* Deep gold color for 'Asturias Beach House' */
+    display: block;
+    margin-top: 5px;
+}
+
+.cta-tagline {
+    font-size: 1.1rem;
+    color: #000000; /* Crisp black text */
+    font-weight: 700; /* Bold font weight matching the picture */
+    margin-bottom: 35px;
+    letter-spacing: 0.5px;
+}
+
+.cta-buttons {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+/* override teal buttons inside teal bg to be white-bordered */
+.cta-section .btn-teal {
+    background: #3b8b8b; /* Solid teal background */
+    color: #ffffff;
+    border: none;
+    padding: 12px 36px;
+    font-size: 1rem;
+    font-weight: 600;
+    border-radius: 8px; /* Smooth rounded corners instead of pills */
+    text-decoration: none;
+    transition: background 0.3s ease;
+}
+
+.cta-section .btn-teal:hover {
+    background: var(--white);
+    color: var(--dark-teal);
+}
+
+/* ==========================================================================
+   GEOMETRIC SHAPE DIVIDER
+   ========================================================================== */
+.geo-divider {
+    background: #4ca1a1; /* Matches the main footer background color */
+    height: 140px;
+    width: 100%;
+    /* Creates the exact jagged landscape/mountain peaks matching the picture */
+    clip-path: polygon(0% 45%, 18% 65%, 50% 25%, 82% 75%, 100% 35%, 100% 100%, 0% 100%);
+    margin-bottom: -1px; /* Prevents tiny layout gaps between elements */
+}
+
+/* ==========================================================================
+   13. FOOTER SECTION
+   ========================================================================== */
+.main-footer {
+    background: #4ca1a1; /* Teal background instead of charcoal */
+    color: #ffffff; /* All text switched to crisp white */
+    padding: 10px 24px 50px;
+    text-align: center;
+}
+
+.footer-logo img {
+    width: 110px;
+    height: 110px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin: 0 auto 25px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.15);
+}
+
+.footer-address {
+    font-style: normal;
+    font-size: 0.95rem;
+    font-weight: 600;
+    line-height: 1.6;
+    color: #ffffff;
+    margin-bottom: 8px;
+}
+
+.footer-email a {
+    font-size: 0.95rem;
+    font-weight: 600;
+    color: #ffffff;
+    text-decoration: none;
+    transition: opacity 0.3s;
+}
+.footer-email a:hover {
+    opacity: 0.8;
+}
+
+.footer-phone {
+    font-size: 0.95rem;
+    font-weight: 600;
+    color: #ffffff;
+    margin: 8px 0 25px;
+}
+
+.footer-socials {
+    display: flex;
+    gap: 12px;
+    justify-content: center;
+    margin-bottom: 40px;
+}
+
+.footer-socials a {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background: #333333; /* Dark/Charcoal circular background for the icons */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #ffffff;
+    font-size: 1rem;
+    text-decoration: none;
+    transition: transform 0.3s ease;
+}
+
+.footer-socials a:hover {
+    transform: scale(1.1);
+}
+
+.footer-copyright {
+    font-size: 0.8rem;
+    font-weight: 700;
+    color: #204b4b; /* Darker teal/black color contrast for the legal text */
+    letter-spacing: 0.5px;
+}
+
+/* ---------- RESPONSIVE MEDIA ENGINES ---------- */
+@media (max-width: 868px) {
+    .room-container, .reverse-row {
+        grid-template-columns: 1fr;
+        gap: 40px;
+        width: 90%;
+    }
+    .room-photo {
+        order: -1; /* Forces picture structure upwards inside mobile preview layouts */
+    }
+    .room-photo img {
+        height: 320px;
+    }
+}
+
+.fade-in-element {
+    opacity: 0;
+    will-change: opacity;
+}
+
+.fade-in-element.active {
+    opacity: 1;
+    transition: opacity 1s ease-out;
+}

@@ -72,6 +72,7 @@ address { font-style: normal; }
 /* teal filled — used in hero & CTA */
 .btn-primary,
 .btn-teal {
+    font-family: var(--font-heading-primary);
     background: var(--primary-teal);
     color: var(--white);
     border: 2px solid var(--primary-teal);
