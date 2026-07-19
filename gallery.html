@@ -5,34 +5,169 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="icon" type="image/x-icon" href="images/favicon.ico">
     <title>Gallery | Asturias Beach House</title>
-    
+
     <link rel="stylesheet" href="home.css">
-    <link rel="stylesheet" href="about.css">
+    <link rel="stylesheet" href="gallery.css">
     <link rel="stylesheet" href="navbar.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 
-    <meta property="og:url" content="https://www.asturiasbeachhouse.com/">
+    <meta property="og:url" content="https://www.asturiasbeachhouse.com/gallery">
     <meta property="og:type" content="website">
-    <meta property="og:title" content="Asturias Beach House by Blissful Creations - Your Perfect Getaway">
-    <meta property="og:description" content="Experience the beauty of Asturias with our beach house">
+    <meta property="og:title" content="Gallery | Asturias Beach House by Blissful Creations">
+    <meta property="og:description" content="Browse through the beauty of paradise at Asturias Beach House">
     <meta property="og:image" content="https://rp.cdn-website.com/f6d0f1ff/dms3rep/multi/opt/2024_THEBEACHHOUSE_LOGO_LOWRES_BY_EXITHAMSTER_106-1920w.JPG">
 </head>
 <body>
 
+    <!-- ===================== NAVBAR (injected by global.js) ===================== -->
     <div id="global-navbar"></div>
 
+    <!-- ===================== HERO SECTION ===================== -->
+    <!-- Exact same structure as about.html and home.html -->
     <header class="hero-section">
-            <div class="hero-content fade-in-element">
-                <img src="images/about-image.png" class="hero-video" alt="Beautiful scenery at Asturias Beach House">
-                <div class="hero-overlay"></div>
-                
-                <div class="hero-text">
-                    <h1>OUR STORY</h1>
-                    <h2 class="sub-brand">Get to know the beauty of Paradise</h2>
-                    <a href="#contact" class="btn btn-primary">CONTACT US</a> 
-                </div>
-            </div>
-        </header>
+        <div class="hero-content fade-in-element">
 
-    </body>
+            <!-- Layer 1: background image — same .hero-video class as home/about -->
+            <img src="images/gallery-image.png" class="hero-video" alt="Beautiful sunset view at Asturias Beach House">
+
+            <!-- Layer 2: dark gradient overlay -->
+            <div class="hero-overlay"></div>
+
+            <!-- Layer 3: text sits on top of overlay -->
+            <div class="hero-text">
+                <h1>GALLERY</h1>
+                <h2 class="sub-brand">Browse through the beauty of the paradise</h2>
+                <a href="#contact" class="btn btn-primary">CONTACT US</a> 
+
+            </div>
+
+        </div>
+    </header>
+
+
+    <!-- ===================== GALLERY GRID ===================== -->
+    <section class="gallery-section">
+        <div class="gallery-container">
+
+            <div class="gallery-grid">
+
+                <!-- ROW 1 — three equal photos -->
+                <div class="gallery-item gi-r1c1">
+                    <img src="images/gallery/g1.jpg" alt="Beach hut dining area with nipa roof">
+                </div>
+                <div class="gallery-item gi-r1c2">
+                    <img src="images/gallery/g2.jpg" alt="Indoor dining with hanging rattan lights">
+                </div>
+                <div class="gallery-item gi-r1c3">
+                    <img src="images/gallery/g3.jpg" alt="Bamboo swing chairs at golden sunset beach">
+                </div>
+
+                <!-- ROW 2 — three equal photos -->
+                <div class="gallery-item gi-r2c1">
+                    <img src="images/gallery/g4.jpg" alt="Welcome to the Camping Area sign with wooden board">
+                </div>
+                <div class="gallery-item gi-r2c2">
+                    <img src="images/gallery/g5.jpg" alt="Staircase with golden Buddha statue centerpiece">
+                </div>
+                <div class="gallery-item gi-r2c3">
+                    <img src="images/gallery/g6.jpg" alt="Enjoy, Chill, Relax, Picnic signboard in garden">
+                </div>
+
+                <!-- ROW 3 — 2-column wide/tall -->
+                <div class="gallery-item gi-r3c1 gi-tall">
+                    <img src="images/gallery/g7.jpg" alt="Love Never Gives Up hand-lettered wooden sign in nature">
+                </div>
+                <div class="gallery-item gi-r3c2 gi-tall">
+                    <img src="images/gallery/g8.jpg" alt="Open-air terrace hallway with wooden railings">
+                </div>
+
+                <!-- ROW 4 — 2-column wide/tall -->
+                <div class="gallery-item gi-r4c1 gi-tall">
+                    <img src="images/gallery/g9.jpg" alt="Stone statue of woman holding basket with flowers">
+                </div>
+                <div class="gallery-item gi-r4c2 gi-tall">
+                    <img src="images/gallery/g10.jpg" alt="Wooden deck overlooking lush mangrove river">
+                </div>
+
+                <!-- ROW 5 — three equal photos -->
+                <div class="gallery-item gi-r5c1">
+                    <img src="images/gallery/g11.jpg" alt="Festive outdoor dining setup with fairy string lights">
+                </div>
+                <div class="gallery-item gi-r5c2">
+                    <img src="images/gallery/g12.jpg" alt="Cottage at dusk with palm silhouettes">
+                </div>
+                <div class="gallery-item gi-r5c3">
+                    <img src="images/gallery/g13.jpg" alt="Menu chalkboard sign with resort information">
+                </div>
+
+                <!-- ROW 6 — three equal photos -->
+                <div class="gallery-item gi-r6c1">
+                    <img src="images/gallery/g14.jpg" alt="Illuminated bamboo walkway at night with warm lights">
+                </div>
+                <div class="gallery-item gi-r6c2">
+                    <img src="images/gallery/g15.jpg" alt="Kayaking on calm blue water between guests">
+                </div>
+                <div class="gallery-item gi-r6c3">
+                    <img src="images/gallery/g16.jpg" alt="Outdoor lounge area under wisteria flower canopy">
+                </div>
+
+            </div>
+            <!-- /gallery-grid -->
+
+        </div>
+    </section>
+
+
+    <!-- ===================== FOLLOW US SECTION ===================== -->
+    <section class="follow-section">
+        <div class="follow-container">
+            <h2 class="follow-title">FOLLOW US ON FACEBOOK<br>TO VIEW MORE!</h2>
+            <a href="https://facebook.com" target="_blank" class="follow-link">
+                <span class="follow-icon"><i class="fa-brands fa-facebook-f"></i></span>
+                <span class="follow-text">ASTURIAS BEACH HOUSE <em>by Blissful Creations</em></span>
+            </a>
+        </div>
+    </section>
+
+
+ <section class="cta-section fade-in-element">
+        <div class="container text-center">
+            <h2>Spend your Day in <br><span class="brand-gold">Asturias Beach House</span></h2>
+            <p class="cta-tagline">We are here to help you.</p>
+            <div class="cta-buttons">
+                <a href="#inquire" class="btn btn-darkteal">Inquire</a>
+                <a href="#ask" class="btn btn-darkteal">Ask us anything</a>
+            </div>
+        </div>
+    </section>
+
+    <div class="geo-divider fade-in-element"></div>
+
+    <footer class="main-footer fade-in-element">
+        <div class="container text-center">
+            <div class="footer-logo">
+                <img src="images/bh-logo.png" alt="Asturias Beach House Circular Logo">
+            </div>
+            <address class="footer-address">
+                Sitio San Juan, Brgy. Owak,<br>
+                Asturias, Cebu, Philippines, 6042
+            </address>
+            <p class="footer-email">
+                <a href="mailto:asturiasbeachhouse@gmail.com">asturiasbeachhouse@gmail.com</a>
+            </p>
+            <p class="footer-phone">General Inquiries (+63) 992 708 2881</p>
+            <div class="footer-socials">
+                <a href="https://facebook.com" target="_blank" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+                <a href="https://messenger.com" target="_blank" aria-label="Messenger"><i class="fa-brands fa-facebook-messenger"></i></a>
+                <a href="https://instagram.com" target="_blank" aria-label="Airbnb"><i class="fa-brands fa-airbnb"></i></a>
+            </div>
+            <p class="footer-copyright">
+                © 2026 Asturias Beach House by Blissful Creations / All Rights Reserved
+            </p>
+        </div>
+    </footer>
+
+    <!-- GLOBAL COMPONENT LIFECYCLE CONTROLLER -->
+    <script src="global.js"></script>
+</body>
 </html>

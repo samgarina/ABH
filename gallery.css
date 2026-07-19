@@ -1,0 +1,736 @@
+/* ==========================================================================
+   ASTURIAS BEACH HOUSE — gallery.css
+   Pulled from home.css (shared base) + gallery-specific styles
+   Sections included:
+     1. Fonts & Variables
+     2. Reset
+     3. Container & Utilities
+     4. Buttons (shared)
+     5. Hero Section
+     6. Gallery Mosaic Grid
+     7. Follow Us on Facebook
+     8. CTA Section       ← from home.css
+     9. Geo Divider       ← from home.css
+    10. Footer            ← from home.css
+    11. Fade-in Animation ← from home.css
+    12. Responsive
+   ========================================================================== */
+
+/* ==========================================================================
+   1. FONTS & VARIABLES
+   ========================================================================== */
+@import url('https://fonts.googleapis.com/css2?family=Heebo:wght@400;600;700;800&family=Kaisei+Decol:wght@700&family=Kaisei+Tokumin:wght@700&family=Krona+One&family=Dancing+Script:wght@700&display=swap');
+
+:root {
+    --primary-teal:  #2D8282;
+    --dark-teal:     #388687;
+    --soft-gold:     #877638;
+    --dark-charcoal: #1A1A1A;
+    --light-gray:    #F9F9F9;
+    --white:         #FFFFFF;
+
+    --font-nav:               'Krona One', sans-serif;
+    --font-heading-primary:   'Kaisei Tokumin', serif;
+    --font-heading-secondary: 'Kaisei Decol', serif;
+    --font-body:              'Heebo', sans-serif;
+    --font-script:            'Dancing Script', cursive;
+
+    --gallery-gap: 6px;
+}
+
+/* ==========================================================================
+   2. RESET
+   ========================================================================== */
+*, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+html  { scroll-behavior: smooth; }
+body  {
+    font-family: var(--font-body);
+    font-weight: 400;
+    color: #333;
+    line-height: 1.7;
+    background: var(--white);
+}
+img     { display: block; max-width: 100%; }
+a       { text-decoration: none; color: inherit; }
+ul      { list-style: none; }
+address { font-style: normal; }
+
+/* ==========================================================================
+   3. CONTAINER & UTILITIES
+   ========================================================================== */
+.container {
+    width: 90%;
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 70px 0;
+}
+.text-center { text-align: center; }
+
+/* ==========================================================================
+   4. BUTTONS
+   ========================================================================== */
+.btn-primary,
+.btn-teal {
+    font-family: var(--font-heading-primary);
+    background: var(--primary-teal);
+    color: var(--white);
+    border: 2px solid var(--primary-teal);
+}
+.btn-primary:hover,
+.btn-teal:hover { background: var(--dark-teal); border-color: var(--dark-teal); }
+
+/*about us button */
+.btn-outline {
+    background: transparent;
+    color: var(--primary-teal);
+    border: 2px solid var(--primary-teal);
+}
+.btn-outline:hover { background: var(--primary-teal); color: var(--white); }
+
+/* gallery SEE MORE, reviews button */
+.btn-darkteal {
+    background: #2d5d5f;
+    color: var(--white);
+    border: 2px solid #2d5d5f;
+}
+.btn-darkteal:hover { background: #163233; border-color: #163233; }
+
+.btn-dark {
+    background: var(--dark-charcoal);
+    color: var(--white);
+    border: 2px solid var(--dark-charcoal);
+}
+.btn-dark:hover { background: #333; border-color: #333; }
+
+.btn-sm { padding: 7px 20px; font-size: 0.72rem; }
+
+
+/* ==========================================================================
+   5. HERO SECTION
+   ========================================================================== */
+
+/* outer shell — full viewport, clips the absolute children */
+.hero-section {
+    position: relative;
+    height: 100vh;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+}
+
+/* hero-content fills the shell and stacks layers */
+.hero-content {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: var(--white);
+}
+
+/* Layer 1 — background image stretches to fill */
+.hero-video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    z-index: 1;
+}
+
+/* Layer 2 — dark gradient overlay */
+.hero-overlay {
+    position: absolute;
+    inset: 0;
+    z-index: 2;
+    background: linear-gradient(
+        to bottom,
+        rgba(0, 0, 0, 0.40) 0%,
+        rgba(0, 0, 0, 0.20) 50%,
+        rgba(0, 0, 0, 0.60) 100%
+    );
+}
+
+/* Layer 3 — text wrapper sits above both layers */
+.hero-text {
+    position: relative;
+    z-index: 3;
+}
+
+/* "GALLERY" — Kaisei Tokumin, explicit white, matching home/about */
+.hero-text h1 {
+    font-family: var(--font-heading-primary);
+    font-weight: 700;
+    font-size: clamp(2.8rem, 7vw, 5rem);
+    letter-spacing: 6px;
+    text-transform: uppercase;
+    text-shadow: 0 2px 24px rgba(0, 0, 0, 0.65);
+    margin-bottom: 10px;
+    line-height: 1.05;
+    color: var(--white);
+}
+
+/* "Browse through the beauty of the paradise" — sub-brand script style */
+.hero-text .sub-brand {
+    font-family: var(--font-script);
+    font-size: clamp(1rem, 2.2vw, 1.4rem);
+    color: rgba(255, 255, 255, 0.92);
+    letter-spacing: 0.5px;
+    font-weight: 400;
+}
+
+/* ==========================================================================
+   6. GALLERY SECTION & MOSAIC GRID
+
+   Exact layout from mockup:
+   Row 1-2 → 3 equal columns (6 photos)
+   Row 3-4 → 2 wide columns, taller height (4 photos)
+   Row 5-6 → 3 equal columns (6 photos)
+
+   6-column grid base — rows 1/2/5/6 use 2-col spans,
+   rows 3/4 use 3-col spans.
+   ========================================================================== */
+.gallery-section {
+    background: var(--white);
+    padding: 50px 0 40px;
+}
+
+.gallery-container {
+    width: 92%;
+    max-width: 1080px;
+    margin: 0 auto;
+}
+
+.gallery-grid {
+    display: grid;
+    gap: var(--gallery-gap);
+    grid-template-columns: repeat(6, 1fr);
+    grid-template-rows:
+        220px
+        220px
+        240px
+        240px
+        220px
+        220px;
+    grid-template-areas:
+        "r1c1 r1c1 r1c2 r1c2 r1c3 r1c3"
+        "r2c1 r2c1 r2c2 r2c2 r2c3 r2c3"
+        "r3c1 r3c1 r3c1 r3c2 r3c2 r3c2"
+        "r4c1 r4c1 r4c1 r4c2 r4c2 r4c2"
+        "r5c1 r5c1 r5c2 r5c2 r5c3 r5c3"
+        "r6c1 r6c1 r6c2 r6c2 r6c3 r6c3";
+}
+
+/* named area assignments */
+.gi-r1c1 { grid-area: r1c1; }
+.gi-r1c2 { grid-area: r1c2; }
+.gi-r1c3 { grid-area: r1c3; }
+.gi-r2c1 { grid-area: r2c1; }
+.gi-r2c2 { grid-area: r2c2; }
+.gi-r2c3 { grid-area: r2c3; }
+.gi-r3c1 { grid-area: r3c1; }
+.gi-r3c2 { grid-area: r3c2; }
+.gi-r4c1 { grid-area: r4c1; }
+.gi-r4c2 { grid-area: r4c2; }
+.gi-r5c1 { grid-area: r5c1; }
+.gi-r5c2 { grid-area: r5c2; }
+.gi-r5c3 { grid-area: r5c3; }
+.gi-r6c1 { grid-area: r6c1; }
+.gi-r6c2 { grid-area: r6c2; }
+.gi-r6c3 { grid-area: r6c3; }
+
+/* base gallery item */
+.gallery-item {
+    overflow: hidden;
+    border-radius: 4px;
+    position: relative;
+    cursor: pointer;
+}
+
+.gallery-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    transition: transform 0.45s ease;
+}
+
+.gallery-item:hover img { transform: scale(1.06); }
+
+.gallery-item::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: rgba(0,0,0,0);
+    transition: background 0.35s ease;
+    pointer-events: none;
+}
+.gallery-item:hover::after { background: rgba(0,0,0,0.18); }
+
+/* ==========================================================================
+   7. FOLLOW US ON FACEBOOK SECTION
+   ========================================================================== */
+.follow-section {
+    background: var(--white);
+    padding: 56px 0 20px;
+    text-align: center;
+}
+
+.follow-container {
+    width: 90%;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.follow-title {
+    font-family: var(--font-heading-secondary);
+    font-weight: 700;
+    font-size: clamp(1.1rem, 2.5vw, 1.45rem);
+    color: var(--primary-teal);
+    letter-spacing: 2.5px;
+    text-transform: uppercase;
+    line-height: 1.5;
+    margin-bottom: 18px;
+}
+
+.follow-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    transition: opacity 0.3s;
+}
+.follow-link:hover { opacity: 0.72; }
+
+.follow-icon {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    background: #1877F2;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--white);
+    font-size: 0.8rem;
+    flex-shrink: 0;
+}
+
+.follow-text {
+    font-family: var(--font-body);
+    font-size: 0.82rem;
+    font-weight: 600;
+    color: var(--dark-charcoal);
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+}
+.follow-text em {
+    font-style: normal;
+    font-weight: 400;
+    text-transform: none;
+    color: #555;
+}
+
+/* ==========================================================================
+   8. CTA SECTION  (from home.css)
+   ========================================================================== */
+.cta-section {
+    background: #ffffff; /* White background matching your image */
+    padding: 80px 0 40px;
+    text-align: center;
+}
+
+.cta-section h2 {
+    font-family: var(--font-heading-primary), sans-serif; /* Changed from script to match image */
+    font-size: clamp(2.2rem, 5vw, 3.2rem);
+    font-weight: 700;
+    line-height: 1.25;
+    margin-bottom: 25px;
+    color: #3b8b8b; /* Teal color for 'Spend your Day in' */
+}
+
+.cta-section h2 .brand-gold {
+    color: #9e813b; /* Deep gold color for 'Asturias Beach House' */
+    display: block;
+    margin-top: 5px;
+}
+
+.cta-tagline {
+    font-size: 1.1rem;
+    color: #000000; /* Crisp black text */
+    font-weight: 700; /* Bold font weight matching the picture */
+    margin-bottom: 35px;
+    letter-spacing: 0.5px;
+}
+
+.cta-buttons {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+/* override teal buttons inside teal bg to be white-bordered */
+.cta-section .btn-teal {
+    background: #3b8b8b; /* Solid teal background */
+    color: #ffffff;
+    border: none;
+    padding: 12px 36px;
+    font-size: 1rem;
+    font-weight: 600;
+    border-radius: 8px; /* Smooth rounded corners instead of pills */
+    text-decoration: none;
+    transition: background 0.3s ease;
+}
+
+.cta-section .btn-teal:hover {
+    background: var(--white);
+    color: var(--dark-teal);
+}
+
+/* ==========================================================================
+   GEOMETRIC SHAPE DIVIDER
+   ========================================================================== */
+.geo-divider {
+    background: #4ca1a1; /* Matches the main footer background color */
+    height: 140px;
+    width: 100%;
+    /* Creates the exact jagged landscape/mountain peaks matching the picture */
+    clip-path: polygon(0% 45%, 18% 65%, 50% 25%, 82% 75%, 100% 35%, 100% 100%, 0% 100%);
+    margin-bottom: -1px; /* Prevents tiny layout gaps between elements */
+}
+
+/* ==========================================================================
+   13. FOOTER SECTION
+   ========================================================================== */
+.main-footer {
+    background: #4ca1a1; /* Teal background instead of charcoal */
+    color: #ffffff; /* All text switched to crisp white */
+    padding: 10px 24px 50px;
+    text-align: center;
+}
+
+.footer-logo img {
+    width: 110px;
+    height: 110px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin: 0 auto 25px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.15);
+}
+
+.footer-address {
+    font-style: normal;
+    font-size: 0.95rem;
+    font-weight: 600;
+    line-height: 1.6;
+    color: #ffffff;
+    margin-bottom: 8px;
+}
+
+.footer-email a {
+    font-size: 0.95rem;
+    font-weight: 600;
+    color: #ffffff;
+    text-decoration: none;
+    transition: opacity 0.3s;
+}
+.footer-email a:hover {
+    opacity: 0.8;
+}
+
+.footer-phone {
+    font-size: 0.95rem;
+    font-weight: 600;
+    color: #ffffff;
+    margin: 8px 0 25px;
+}
+
+.footer-socials {
+    display: flex;
+    gap: 12px;
+    justify-content: center;
+    margin-bottom: 40px;
+}
+
+.footer-socials a {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background: #333333; /* Dark/Charcoal circular background for the icons */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #ffffff;
+    font-size: 1rem;
+    text-decoration: none;
+    transition: transform 0.3s ease;
+}
+
+.footer-socials a:hover {
+    transform: scale(1.1);
+}
+
+.footer-copyright {
+    font-size: 0.8rem;
+    font-weight: 700;
+    color: #204b4b; /* Darker teal/black color contrast for the legal text */
+    letter-spacing: 0.5px;
+}
+
+/* ==========================================================================
+   14. RESPONSIVE
+   ========================================================================== */
+@media (max-width: 607px) {
+    .explore-grid      { grid-template-columns: 1fr; gap: 36px; }
+    .explore-image img { height: 525px; }
+    .rooms-grid        { grid-template-columns: 1fr 1fr; }
+    .features-grid     { grid-template-columns: 1fr 1fr; gap: 24px; }
+    .gallery-grid      { grid-template-rows: repeat(2, 160px); }
+}
+
+@media (max-width: 700px) {
+    .navbar      { gap: 14px; padding: 12px 20px; flex-wrap: wrap; }
+    .nav-links   { gap: 12px; }
+    .nav-links a { font-size: 0.58rem; }
+    .rooms-grid  { grid-template-columns: 1fr; }
+    .gallery-grid {
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: repeat(3, 160px);
+    }
+    .features-grid { grid-template-columns: 1fr; }
+    .review-card   { padding: 28px 22px; }
+    .left-nav, .right-nav { display: none; } /* collapses nav on very small; add hamburger if needed */
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: var(--font-body);
+    font-weight: 400; /* Heebo Regular */
+    color: #333333;
+    line-height: 1.6;
+    background-color: var(--white);
+}
+
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 60px 0;
+}
+
+.text-center {
+    text-align: center;
+}
+
+/* ==========================================================================
+   UPDATED FONT ASSIGNMENTS FOR YOUR SPECIFIC UTILITIES
+   ========================================================================== */
+
+/* Navbar links using Krona One */
+.nav-links a {
+    font-family: var(--font-nav);
+    font-weight: 400; /* Krona One only comes in regular */
+    color: var(--white);
+    text-decoration: none;
+    font-size: 0.75rem; /* Kept small because Krona One runs naturally wide */
+    letter-spacing: 1px;
+    transition: color 0.3s ease;
+}
+
+/* --- THE CONTAINER --- */
+.hero-content {
+    position: relative; /* Acts as the anchor for the absolute positioned elements */
+    width: 100%;
+    height: 100vh; /* You can also use 100vh to make it full screen height */
+    display: flex;
+    align-items: center; /* Centers content vertically */
+    justify-content: center; /* Centers content horizontally */
+    overflow: hidden; /* Prevents the video from spilling out */
+}
+
+.hero-video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover; 
+    z-index: 1; 
+    object-position: center; 
+    
+}
+
+.hero-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 2; /* Sits on top of the video */
+    background: linear-gradient(to bottom, rgba(0, 0, 0, 0.2) 0%, rgba(0, 0, 0, 0.5) 100%);
+}
+
+.hero-text {
+    position: relative;
+    z-index: 3; /* Sits on top of the overlay */
+    text-align: center;
+    color: #ffffff; /* Ensures text is white against the dark gradient */
+}
+
+.hero-text h1 {
+    font-family: var(--font-heading-primary);
+    font-weight: 700; 
+    font-size: 3.5rem;
+    letter-spacing: 3px;
+    margin-bottom: 5px;
+    margin-top: 0; /* Resetting your old margins */
+}
+
+.hero-text .sub-brand {
+    margin-bottom: 30px; /* Adds space before the button */
+}
+
+/* ==========================================================================
+   9. GEOMETRIC SHAPE DIVIDER  (from home.css)
+   ========================================================================== */
+.geo-divider {
+    background: #4ca1a1;
+    height: 140px;
+    width: 100%;
+    clip-path: polygon(0% 45%, 18% 65%, 50% 25%, 82% 75%, 100% 35%, 100% 100%, 0% 100%);
+    margin-bottom: -1px;
+}
+
+/* ==========================================================================
+   10. FOOTER  (from home.css)
+   ========================================================================== */
+.main-footer {
+    background: #4ca1a1;
+    color: #ffffff;
+    padding: 10px 24px 50px;
+    text-align: center;
+}
+
+.footer-logo img {
+    width: 110px;
+    height: 110px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin: 0 auto 25px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.15);
+}
+
+.footer-address {
+    font-style: normal;
+    font-size: 0.95rem;
+    font-weight: 600;
+    line-height: 1.6;
+    color: #ffffff;
+    margin-bottom: 8px;
+}
+
+.footer-email a {
+    font-size: 0.95rem;
+    font-weight: 600;
+    color: #ffffff;
+    text-decoration: none;
+    transition: opacity 0.3s;
+}
+.footer-email a:hover { opacity: 0.8; }
+
+.footer-phone {
+    font-size: 0.95rem;
+    font-weight: 600;
+    color: #ffffff;
+    margin: 8px 0 25px;
+}
+
+.footer-socials {
+    display: flex;
+    gap: 12px;
+    justify-content: center;
+    margin-bottom: 40px;
+}
+
+.footer-socials a {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background: #333333;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #ffffff;
+    font-size: 1rem;
+    text-decoration: none;
+    transition: transform 0.3s ease;
+}
+.footer-socials a:hover { transform: scale(1.1); }
+
+.footer-copyright {
+    font-size: 0.8rem;
+    font-weight: 700;
+    color: #204b4b;
+    letter-spacing: 0.5px;
+}
+
+/* ==========================================================================
+   11. FADE-IN ANIMATION  (from home.css)
+   ========================================================================== */
+.fade-in-element {
+    opacity: 0;
+    will-change: opacity;
+}
+.fade-in-element.active {
+    opacity: 1;
+    transition: opacity 1s ease-out;
+}
+
+/* ==========================================================================
+   12. RESPONSIVE
+   ========================================================================== */
+@media (max-width: 900px) {
+    .gallery-grid {
+        grid-template-columns: repeat(4, 1fr);
+        grid-template-rows: 180px 180px 200px 200px 180px 180px;
+        grid-template-areas:
+            "r1c1 r1c1 r1c2 r1c2"
+            "r1c3 r1c3 r2c1 r2c1"
+            "r2c2 r2c2 r2c3 r2c3"
+            "r3c1 r3c1 r3c2 r3c2"
+            "r4c1 r4c1 r4c2 r4c2"
+            "r5c1 r5c1 r5c2 r5c2";
+    }
+    .gi-r5c3, .gi-r6c1, .gi-r6c2, .gi-r6c3 { display: none; }
+    .geo-divider { height: 100px; }
+}
+
+@media (max-width: 580px) {
+    .gallery-grid {
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: repeat(8, 150px);
+        grid-template-areas: none;
+        gap: 5px;
+    }
+    .gallery-item  { grid-area: auto !important; }
+    .hero-content h1 { letter-spacing: 3px; }
+    .follow-title    { font-size: 1rem; }
+    .cta-buttons     { flex-direction: column; align-items: center; }
+    .geo-divider     { height: 80px; }
+    .footer-logo img { width: 86px; height: 86px; }
+}
