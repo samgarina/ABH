@@ -76,11 +76,7 @@
 .btn-teal-action:hover {
     background-color: var(--brand-teal-dark);
 }
-
-/* ---------- 3. HERO VIEWPORT AREA ---------- */
-/* ==========================================================================
-   UPDATED HERO VIEWPORT CONFIGURATION (Eliminates Bottom Whitespace)
-   ========================================================================== */
+/* hero section */
 .hero-section {
     position: relative;
     height: 100vh;      /* Forces it to take up exactly 100% of the screen height */
