@@ -1,20 +1,4 @@
-/* ==========================================================================
-   ASTURIAS BEACH HOUSE — gallery.css
-   Pulled from home.css (shared base) + gallery-specific styles
-   Sections included:
-     1. Fonts & Variables
-     2. Reset
-     3. Container & Utilities
-     4. Buttons (shared)
-     5. Hero Section
-     6. Gallery Mosaic Grid
-     7. Follow Us on Facebook
-     8. CTA Section       ← from home.css
-     9. Geo Divider       ← from home.css
-    10. Footer            ← from home.css
-    11. Fade-in Animation ← from home.css
-    12. Responsive
-   ========================================================================== */
+
 
 /* ==========================================================================
    1. FONTS & VARIABLES
@@ -69,30 +53,32 @@ address { font-style: normal; }
 /* ==========================================================================
    4. BUTTONS
    ========================================================================== */
-.btn-primary,
-.btn-teal {
+.btn-primary {
     font-family: var(--font-heading-primary);
     background: var(--primary-teal);
     color: var(--white);
     border: 2px solid var(--primary-teal);
+    padding: 10px 30px;
+    font-size: 0.85rem;
+    border-radius: 50px;
+    letter-spacing: 1px;
 }
-.btn-primary:hover,
-.btn-teal:hover { background: var(--dark-teal); border-color: var(--dark-teal); }
 
-/*about us button */
-.btn-outline {
-    background: transparent;
-    color: var(--primary-teal);
-    border: 2px solid var(--primary-teal);
-}
-.btn-outline:hover { background: var(--primary-teal); color: var(--white); }
-
-/* gallery SEE MORE, reviews button */
 .btn-darkteal {
+    font-family: var(--font-body);
     background: #2d5d5f;
     color: var(--white);
-    border: 2px solid #2d5d5f;
+    padding: 10px 30px;
+    font-size: 0.85rem;
+    border-radius: 50px;
+    text-transform: uppercase;
 }
+
+.btn-primary:hover, .btn-dark:hover, .btn-darkteal:hover {
+    background: var(--dark-teal);
+    border-color: var(--dark-teal);
+}
+
 .btn-darkteal:hover { background: #163233; border-color: #163233; }
 
 .btn-dark {
@@ -179,7 +165,7 @@ address { font-style: normal; }
 
 /* "Browse through the beauty of the paradise" — sub-brand script style */
 .hero-text .sub-brand {
-    font-family: var(--font-script);
+    font-family: var(--font-heading-primary);
     font-size: clamp(1rem, 2.2vw, 1.4rem);
     color: rgba(255, 255, 255, 0.92);
     letter-spacing: 0.5px;
@@ -197,10 +183,12 @@ address { font-style: normal; }
    6-column grid base — rows 1/2/5/6 use 2-col spans,
    rows 3/4 use 3-col spans.
    ========================================================================== */
-.gallery-section {
-    background: var(--white);
+.body .gallery-section {
+    background: #ffffff; 
     padding: 50px 0 40px;
 }
+
+.gallery-section h2 { color: var(--primary-teal); }
 
 .gallery-container {
     width: 92%;
@@ -292,7 +280,7 @@ address { font-style: normal; }
 .follow-title {
     font-family: var(--font-heading-secondary);
     font-weight: 700;
-    font-size: clamp(1.1rem, 2.5vw, 1.45rem);
+    font-size: clamp(1.5rem, 2.75vw, 1.5rem);
     color: var(--primary-teal);
     letter-spacing: 2.5px;
     text-transform: uppercase;
@@ -309,31 +297,32 @@ address { font-style: normal; }
 .follow-link:hover { opacity: 0.72; }
 
 .follow-icon {
-    width: 30px;
-    height: 30px;
+    width: 20px;
+    height: 20px;
     border-radius: 50%;
-    background: #1877F2;
+    background: var(--primary-teal);
     display: flex;
     align-items: center;
     justify-content: center;
     color: var(--white);
-    font-size: 0.8rem;
+    font-size: 0.7rem;
     flex-shrink: 0;
 }
 
 .follow-text {
     font-family: var(--font-body);
-    font-size: 0.82rem;
+    font-size: 0.85rem;
     font-weight: 600;
     color: var(--dark-charcoal);
     letter-spacing: 0.5px;
     text-transform: uppercase;
+    color: var(--primary-teal);
 }
 .follow-text em {
     font-style: normal;
     font-weight: 400;
     text-transform: none;
-    color: #555;
+    color: var(--primary-teal);
 }
 
 /* ==========================================================================
