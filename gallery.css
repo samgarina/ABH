@@ -148,44 +148,34 @@ address { font-style: normal; }
 .hero-text {
     position: relative;
     z-index: 3;
+    line-height: 40px;
+    color: #ffffff;
+    text-align: center; 
 }
 
 /* "GALLERY" — Kaisei Tokumin, explicit white, matching home/about */
 .hero-text h1 {
     font-family: var(--font-heading-primary);
     font-weight: 700;
-    font-size: clamp(2.8rem, 7vw, 5rem);
-    letter-spacing: 6px;
-    text-transform: uppercase;
-    text-shadow: 0 2px 24px rgba(0, 0, 0, 0.65);
-    margin-bottom: 10px;
-    line-height: 1.05;
+    font-size: 1000px;
+    letter-spacing: 3px;
+    margin-bottom: 5px;
+    margin-top: 0;
+    line-height: 1.25;
     color: var(--white);
 }
 
 /* "Browse through the beauty of the paradise" — sub-brand script style */
 .hero-text .sub-brand {
     font-family: var(--font-heading-primary);
-    font-size: clamp(1rem, 2.2vw, 1.4rem);
-    color: rgba(255, 255, 255, 0.92);
     letter-spacing: 0.5px;
     font-weight: 400;
 }
 
-/* ==========================================================================
-   6. GALLERY SECTION & MOSAIC GRID
-
-   Exact layout from mockup:
-   Row 1-2 → 3 equal columns (6 photos)
-   Row 3-4 → 2 wide columns, taller height (4 photos)
-   Row 5-6 → 3 equal columns (6 photos)
-
-   6-column grid base — rows 1/2/5/6 use 2-col spans,
-   rows 3/4 use 3-col spans.
-   ========================================================================== */
-.body .gallery-section {
+/*   6. GALLERY SECTION & MOSAIC GRID */
+.gallery-section {
     background: #ffffff; 
-    padding: 50px 0 40px;
+    padding: 70px 0 50px;
 }
 
 .gallery-section h2 { color: var(--primary-teal); }
@@ -237,7 +227,6 @@ address { font-style: normal; }
 /* base gallery item */
 .gallery-item {
     overflow: hidden;
-    border-radius: 4px;
     position: relative;
     cursor: pointer;
 }

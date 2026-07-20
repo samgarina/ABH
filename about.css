@@ -121,27 +121,22 @@
 /* Text wrapper layer */
 .hero-text {
     position: relative;
-    z-index: 3; /* Placed safely on top of image and overlay layers */
+    z-index: 3; 
+    text-align: center;
+    color: #ffffff;/* Placed safely on top of image and overlay layers */
 }
 
 .hero-text h1 {
     font-family: var(--font-heading-primary);
-    font-weight: 600;
-    font-size: clamp(2.5rem, 6vw, 4.2rem);
-    letter-spacing: 5px;
-    text-transform: uppercase;
-    text-shadow: 0 2px 24px rgba(0,0,0,0.6);
-    margin-bottom: 8px;
-    line-height: 1.1;
-    color: var(--base-white);
+    font-weight: 700;
+    font-size: 3.5rem;
+    letter-spacing: 3px;
+    margin-bottom: 5px;
+    margin-top: 0;
 }
 
-.sub-brand {
-    font-family: var(--font-script-accents);
-    font-size: clamp(1.5rem, 3vw, 2.2rem);
-    font-weight: 400;
-    color: rgba(255,255,255,0.9);
-    margin-bottom: 28px;
+.hero-text .sub-brand {
+    margin-bottom: 30px;
 }
 
 /* ---------- 4. FLEX ROWS (STORY LINES) ---------- */
