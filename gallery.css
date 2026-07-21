@@ -17,8 +17,6 @@
     --font-heading-primary:   'Kaisei Tokumin', serif;
     --font-heading-secondary: 'Kaisei Decol', serif;
     --font-body:              'Heebo', sans-serif;
-    --font-script:            'Dancing Script', cursive;
-
     --gallery-gap: 6px;
 }
 
@@ -66,11 +64,13 @@ address { font-style: normal; }
 
 .btn-darkteal {
     font-family: var(--font-body);
+    font-weight: 600;
     background: #2d5d5f;
     color: var(--white);
     padding: 10px 30px;
     font-size: 0.85rem;
     border-radius: 50px;
+    letter-spacing: 15%;
     text-transform: uppercase;
 }
 
@@ -191,12 +191,12 @@ address { font-style: normal; }
     gap: var(--gallery-gap);
     grid-template-columns: repeat(6, 1fr);
     grid-template-rows:
-        220px
-        220px
-        240px
-        240px
-        220px
-        220px;
+        260px
+        260px
+        300px
+        300px
+        260px
+        260px;
     grid-template-areas:
         "r1c1 r1c1 r1c2 r1c2 r1c3 r1c3"
         "r2c1 r2c1 r2c2 r2c2 r2c3 r2c3"
@@ -353,23 +353,6 @@ address { font-style: normal; }
     flex-wrap: wrap;
 }
 
-/* override teal buttons inside teal bg to be white-bordered */
-.cta-section .btn-teal {
-    background: #3b8b8b; /* Solid teal background */
-    color: #ffffff;
-    border: none;
-    padding: 12px 36px;
-    font-size: 1rem;
-    font-weight: 600;
-    border-radius: 8px; /* Smooth rounded corners instead of pills */
-    text-decoration: none;
-    transition: background 0.3s ease;
-}
-
-.cta-section .btn-teal:hover {
-    background: var(--white);
-    color: var(--dark-teal);
-}
 
 /* ==========================================================================
    GEOMETRIC SHAPE DIVIDER
@@ -667,9 +650,6 @@ body {
     letter-spacing: 0.5px;
 }
 
-/* ==========================================================================
-   11. FADE-IN ANIMATION  (from home.css)
-   ========================================================================== */
 .fade-in-element {
     opacity: 0;
     will-change: opacity;
