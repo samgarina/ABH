@@ -74,7 +74,9 @@ address { font-style: normal; }
     text-transform: uppercase;
 }
 
-.btn-primary:hover, .btn-dark:hover, .btn-darkteal:hover {
+.btn-darkteal:hover { background: #163233; border-color: #163233; }
+
+.btn-primary:hover, .btn-dark:hover {
     background: var(--dark-teal);
     border-color: var(--dark-teal);
 }
