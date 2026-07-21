@@ -565,9 +565,6 @@ address { font-style: normal; }
     color: var(--dark-teal);
 }
 
-/* ==========================================================================
-   GEOMETRIC SHAPE DIVIDER
-   ========================================================================== */
 .geo-divider {
     background: #4ca1a1; /* Matches the main footer background color */
     height: 140px;
@@ -576,10 +573,7 @@ address { font-style: normal; }
     clip-path: polygon(0% 45%, 18% 65%, 50% 25%, 82% 75%, 100% 35%, 100% 100%, 0% 100%);
     margin-bottom: -1px; /* Prevents tiny layout gaps between elements */
 }
-
-/* ==========================================================================
-   13. FOOTER SECTION
-   ========================================================================== */
+ /*footer section*/
 .main-footer {
     background: #4ca1a1; /* Teal background instead of charcoal */
     color: #ffffff; /* All text switched to crisp white */
