@@ -508,9 +508,7 @@ address { font-style: normal; }
 .map-container iframe { display: block; }
 
 /* 12. CTA SECTION */
-/* ==========================================================================
-   12. CALL TO ACTION (CTA) SECTION
-   ========================================================================== */
+
 .cta-section {
     background: #ffffff; /* White background matching your image */
     padding: 80px 0 40px;
