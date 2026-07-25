@@ -153,6 +153,116 @@ address { font-style: normal; }
     background: linear-gradient(to bottom, rgba(0, 0, 0, 0.5) 30%, rgba(0, 0, 0, 0.7) 100%);
 }
 
-
+.directions-section {
+    background: var(--white);
+    padding: 70px 0 50px;
+}
+ 
+.directions-container {
+    width: 88%;
+    max-width: 1060px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 60px;           /* vertical gap between From Cebu / From Balamban blocks */
+}
+ 
+/* ---- each row: photos + text side by side ---- */
+.direction-block {
+    display: grid;
+    grid-template-columns: 1fr 1.45fr;   /* photos narrower, text wider */
+    gap: 48px;
+    align-items: start;
+}
+ 
+/* reverse layout for From Balamban block (text left, photos right) */
+.direction-block--reverse {
+    grid-template-columns: 1.45fr 1fr;
+}
+ 
+/* ---- stacked photos column ---- */
+.direction-photos {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+ 
+.direction-photos img {
+    width: 100%;
+    height: 210px;
+    object-fit: cover;
+    border-radius: 8px;
+    box-shadow: 0 4px 16px rgba(0,0,0,0.12);
+    transition: transform 0.3s ease;
+}
+.direction-photos img:hover { transform: scale(1.02); }
+ 
+/* ---- text column ---- */
+.direction-text {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    padding-top: 6px;
+    color: #2D8282;
+}
+ 
+/* "From Cebu City" / "From Balamban" — bold dark heading */
+.direction-origin {
+    font-family: var(--font-body);
+    font-weight: 800;
+    font-size: 1rem;
+    color: #2f7274;
+    margin-bottom: 2px;
+    letter-spacing: 0.3px;
+}
+ 
+/* "Public V-Hire" — slightly smaller, normal weight */
+.direction-mode {
+    font-family: var(--font-body);
+    font-weight: 600;
+    font-size: 0.92rem;
+    color: #2D8282;
+    margin-bottom: 10px;
+}
+ 
+/* "Option A:", "Option B:" labels */
+.direction-option-label {
+    font-family: var(--font-body);
+    font-weight: 700;
+    font-size: 0.88rem;
+    color: var(--primary-teal);
+    margin-top: 14px;
+    margin-bottom: 6px;
+}
+ 
+/* bullet list */
+.direction-list {
+    list-style: none;
+    padding: 0;
+    margin: 0 0 6px 0;
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+ 
+.direction-list li {
+    font-family: var(--font-body);
+    font-size: 0.84rem;
+    color: #2D8282;
+    line-height: 1.7;
+    padding-left: 16px;
+    position: relative;
+}
+ 
+/* bullet dot */
+.direction-list li::before {
+    content: '•';
+    position: absolute;
+    left: 0;
+    top: 0;
+    color: var(--primary-teal);
+    font-size: 1rem;
+    line-height: 1.7;
+}
 
 }
