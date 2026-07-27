@@ -235,9 +235,9 @@ address { font-style: normal; }
 /* body paragraphs — Heebo italic, small, dark gray */
 .makehome-text p {
     font-family: var(--font-body);
-    font-size: 0.84rem;
+    font-size: 0.9rem;
     font-style: italic;
-    color: #444;
+    color: #313030;
     line-height: 1.85;
     margin-bottom: 14px;
 }
@@ -246,7 +246,7 @@ address { font-style: normal; }
 /* photo */
 .makehome-image img {
     width: 100%;
-    height: 320px;
+    height: 500px;
     object-fit: cover;
     border-radius: 10px;
     box-shadow: 0 6px 28px rgba(0,0,0,0.14);
