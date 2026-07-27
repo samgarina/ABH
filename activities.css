@@ -156,4 +156,102 @@ address { font-style: normal; }
     background: linear-gradient(to bottom, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.4) 50%);
 }
 
+.activities-grid-section {
+    background: var(--white);
+    padding: 10px 0 50px;
+}
+ 
+.activities-container {
+    width: 88%;
+    max-width: 900px;
+    margin: 0 auto;
+}
+ 
+.activities-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(3, 160px);
+    gap: 6px;
+}
+ 
+.act-item {
+    overflow: hidden;
+    position: relative;
+    cursor: pointer;
+}
+ 
+.act-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    transition: transform 0.4s ease;
+}
+ 
+.act-item:hover img { transform: scale(1.07); }
+ 
+/* subtle dark hover overlay */
+.act-item::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: rgba(0,0,0,0);
+    transition: background 0.35s ease;
+    pointer-events: none;
+}
+.act-item:hover::after { background: rgba(0,0,0,0.18); }
+ 
+/* ==========================================================================
+   8. MAKE YOURSELF AT HOME SECTION
+   — text left (teal heading, italic body), large photo right
+   ========================================================================== */
+.makehome-section {
+    background: var(--white);
+    padding: 60px 0 70px;
+}
+ 
+.makehome-container {
+    width: 88%;
+    max-width: 980px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1fr 1.3fr;   /* text narrower, photo wider */
+    gap: 56px;
+    align-items: center;
+}
+ 
+/* heading — Kaisei Decol, teal, uppercase */
+.makehome-text h2 {
+    font-family: var(--font-heading-secondary);
+    font-weight: 700;
+    font-size: clamp(1.3rem, 2.5vw, 1.75rem);
+    color: var(--primary-teal);
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    line-height: 1.3;
+    margin-bottom: 20px;
+}
+ 
+/* body paragraphs — Heebo italic, small, dark gray */
+.makehome-text p {
+    font-family: var(--font-body);
+    font-size: 0.84rem;
+    font-style: italic;
+    color: #444;
+    line-height: 1.85;
+    margin-bottom: 14px;
+}
+.makehome-text p:last-child { margin-bottom: 0; }
+ 
+/* photo */
+.makehome-image img {
+    width: 100%;
+    height: 320px;
+    object-fit: cover;
+    border-radius: 10px;
+    box-shadow: 0 6px 28px rgba(0,0,0,0.14);
+    transition: transform 0.4s ease;
+}
+.makehome-image img:hover { transform: scale(1.02); }
+
 }
