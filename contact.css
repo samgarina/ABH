@@ -1,0 +1,169 @@
+/* ==========================================================================
+   CONTACT PAGE — relies on home.css for tokens (--primary-teal, --font-body,
+   .container, .btn, .hero-section, etc). Only page-specific rules live here.
+   ========================================================================== */
+
+.contact-section {
+    background: var(--light-gray, #F9F9F9);
+}
+
+.contact-grid {
+    display: grid;
+    grid-template-columns: 0.85fr 1.15fr;
+    gap: 60px;
+    align-items: start;
+}
+
+/* ---------- LEFT COLUMN: DETAILS ---------- */
+.contact-info h2 {
+    font-family: var(--font-heading-primary, serif);
+    color: var(--dark-charcoal, #1A1A1A);
+    font-size: 1.7rem;
+    letter-spacing: 1px;
+    margin-bottom: 18px;
+}
+
+.contact-lead {
+    color: #444;
+    margin-bottom: 28px;
+    max-width: 40ch;
+}
+
+.contact-details-list {
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+    margin-bottom: 28px;
+}
+
+.contact-details-list li {
+    display: flex;
+    align-items: flex-start;
+    gap: 14px;
+    color: #333;
+}
+
+.contact-details-list i {
+    color: var(--primary-teal, #2D8282);
+    font-size: 1.1rem;
+    width: 20px;
+    margin-top: 3px;
+    flex-shrink: 0;
+}
+
+.contact-details-list a {
+    color: #333;
+    border-bottom: 1px solid transparent;
+    transition: border-color 0.2s;
+}
+.contact-details-list a:hover { border-color: var(--primary-teal, #2D8282); }
+
+.contact-socials {
+    display: flex;
+    gap: 14px;
+    margin-bottom: 32px;
+}
+
+.contact-socials a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 42px;
+    height: 42px;
+    border-radius: 50%;
+    background: var(--dark-charcoal, #1A1A1A);
+    color: #fff;
+    transition: background 0.25s, transform 0.2s;
+}
+.contact-socials a:hover {
+    background: var(--primary-teal, #2D8282);
+    transform: translateY(-2px);
+}
+
+.contact-book-btn { display: inline-block; }
+
+/* ---------- RIGHT COLUMN: FORM ---------- */
+.contact-form-wrap {
+    background: #fff;
+    border-radius: 16px;
+    padding: 40px;
+    box-shadow: 0 8px 32px rgba(0,0,0,0.06);
+}
+
+.contact-form { display: flex; flex-direction: column; gap: 20px; }
+
+.form-row { display: flex; flex-direction: column; gap: 6px; }
+
+.form-row-split {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+}
+.form-row-split > div { display: flex; flex-direction: column; gap: 6px; }
+
+.contact-form label {
+    font-family: var(--font-body, sans-serif);
+    font-weight: 600;
+    font-size: 0.82rem;
+    letter-spacing: 0.4px;
+    color: var(--dark-charcoal, #1A1A1A);
+}
+
+.contact-form input,
+.contact-form textarea {
+    font-family: var(--font-body, sans-serif);
+    font-size: 0.95rem;
+    padding: 12px 14px;
+    border: 1.5px solid #e0e0e0;
+    border-radius: 8px;
+    background: #fdfdfd;
+    color: #222;
+    transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+.contact-form input:focus,
+.contact-form textarea:focus {
+    outline: none;
+    border-color: var(--primary-teal, #2D8282);
+    box-shadow: 0 0 0 3px rgba(45, 130, 130, 0.15);
+}
+
+.contact-form textarea { resize: vertical; min-height: 110px; }
+
+/* Honeypot field — hidden from real users, present for bots to fill in */
+.hp-field {
+    position: absolute;
+    left: -9999px;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+}
+
+.contact-submit-btn {
+    border: none;
+    width: 100%;
+    padding: 14px 28px;
+    font-size: 0.85rem;
+    margin-top: 4px;
+}
+
+.contact-submit-btn:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+    transform: none !important;
+}
+
+.form-status {
+    font-size: 0.88rem;
+    min-height: 1.2em;
+    margin-top: -6px;
+}
+.form-status.success { color: var(--primary-teal, #2D8282); font-weight: 600; }
+.form-status.error { color: #b0392f; font-weight: 600; }
+
+/* ---------- RESPONSIVE ---------- */
+@media (max-width: 860px) {
+    .contact-grid { grid-template-columns: 1fr; gap: 40px; }
+    .contact-form-wrap { padding: 28px; }
+    .form-row-split { grid-template-columns: 1fr; }
+}

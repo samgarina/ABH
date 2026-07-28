@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/x-icon" href="images/favicon.ico">
+    <title>Contact Us | Asturias Beach House</title>
+    <link rel="stylesheet" href="home.css">
+    <link rel="stylesheet" href="navbar.css">
+    <link rel="stylesheet" href="contact.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+    <meta property="og:url" content="https://www.asturiasbeachhouse.com/contact.html">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Contact Asturias Beach House by Blissful Creations">
+    <meta property="og:description" content="Send us an inquiry about rooms, rates, or availability at Asturias Beach House.">
+    <meta property="og:image" content="images/bh-logo.png">
+</head>
+<body>
+
+    <!-- GLOBAL NAVBAR PLACEHOLDER -->
+    <div id="global-navbar"></div>
+
+    <header class="hero-section">
+        <div class="hero-content fade-in-element">
+            <img src="images/activitiesg7.png" class="hero-video" alt="Sunset view at Asturias Beach House">
+            <div class="hero-overlay"></div>
+
+            <div class="hero-text">
+                <h1>GET IN TOUCH</h1>
+                <h2 class="sub-brand">We'd love to help plan your stay</h2>
+                <a href="https://m.me/asturiasbeachhouse6042" target="_blank" rel="noopener noreferrer" class="btn btn-primary">MESSAGE US</a>
+            </div>
+        </div>
+    </header>
+
+    <section id="contact" class="contact-section fade-in-element">
+        <div class="container">
+            <div class="contact-grid">
+
+                <!-- LEFT: CONTACT DETAILS -->
+                <div class="contact-info">
+                    <h2>CONTACT DETAILS</h2>
+                    <p class="contact-lead">Have a question about rooms, rates, or availability? Send us a message and we'll get back to you as soon as we can &mdash; or reach us directly below.</p>
+
+                    <ul class="contact-details-list">
+                        <li>
+                            <i class="fa-solid fa-location-dot"></i>
+                            <span>Sitio San Juan, Brgy. Owak,<br>Asturias, Cebu, Philippines, 6042</span>
+                        </li>
+                        <li>
+                            <i class="fa-solid fa-envelope"></i>
+                            <a href="mailto:asturiasbeachhouse@gmail.com">asturiasbeachhouse@gmail.com</a>
+                        </li>
+                        <li>
+                            <i class="fa-solid fa-phone"></i>
+                            <span>(+63) 992 708 2881</span>
+                        </li>
+                    </ul>
+
+                    <div class="contact-socials">
+                        <a href="https://www.facebook.com/asturiasbeachhouse6042" target="_blank" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+                        <a href="https://m.me/asturiasbeachhouse6042" target="_blank" rel="noopener noreferrer" aria-label="Messenger"><i class="fa-brands fa-facebook-messenger"></i></a>
+                        <a href="https://www.airbnb.com/rooms/27731669" target="_blank" rel="noopener noreferrer" aria-label="Airbnb"><i class="fa-brands fa-airbnb"></i></a>
+                    </div>
+
+                    <a href="https://www.airbnb.com/rooms/27731669?source_impression_id=p3_1779068611_P36hkxsERjfd-PJ0"
+                       target="_blank" rel="noopener noreferrer" aria-label="Book Now on Airbnb"
+                       class="btn btn-darkteal contact-book-btn">Book Now on Airbnb</a>
+                </div>
+
+                <!-- RIGHT: CONTACT FORM -->
+                <div class="contact-form-wrap">
+                    <form id="contact-form" class="contact-form" novalidate>
+
+                        <div class="form-row">
+                            <label for="cf-name">Full Name</label>
+                            <input type="text" id="cf-name" name="name" required autocomplete="name">
+                        </div>
+
+                        <div class="form-row">
+                            <label for="cf-email">Email Address</label>
+                            <input type="email" id="cf-email" name="email" required autocomplete="email">
+                        </div>
+
+                        <div class="form-row">
+                            <label for="cf-phone">Phone Number</label>
+                            <input type="tel" id="cf-phone" name="phone" autocomplete="tel">
+                        </div>
+
+                        <div class="form-row form-row-split">
+                            <div>
+                                <label for="cf-checkin">Preferred Check-in </label>
+                                <input type="date" id="cf-checkin" name="check_in">
+                            </div>
+                            <div>
+                                <label for="cf-checkout">Preferred Check-out</label>
+                                <input type="date" id="cf-checkout" name="check_out">
+                            </div>
+                        </div>
+
+                        <div class="form-row">
+                            <label for="cf-message">Message</label>
+                            <textarea id="cf-message" name="message" rows="5" required placeholder="Tell us about your group size, dates, or any questions you have..."></textarea>
+                        </div>
+
+                        <!-- Honeypot spam trap: hidden from real visitors, bots tend to fill every field -->
+                        <div class="hp-field" aria-hidden="true">
+                            <label for="cf-company">Company</label>
+                            <input type="text" id="cf-company" name="_gotcha" tabindex="-1" autocomplete="off">
+                        </div>
+
+                        <button type="submit" class="btn btn-darkteal contact-submit-btn">
+                            <span class="btn-label">SEND MESSAGE</span>
+                        </button>
+
+                        <p id="form-status" class="form-status" role="status" aria-live="polite"></p>
+                    </form>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <div class="geo-divider fade-in-element"></div>
+
+    <footer class="main-footer fade-in-element">
+        <div class="container text-center">
+            <div class="footer-logo">
+                <img src="images/bh-logo.png" alt="Asturias Beach House Circular Logo">
+            </div>
+            <address class="footer-address">
+                Sitio San Juan, Brgy. Owak,<br>
+                Asturias, Cebu, Philippines, 6042
+            </address>
+            <p class="footer-email">
+                <a href="mailto:asturiasbeachhouse@gmail.com">asturiasbeachhouse@gmail.com</a>
+            </p>
+            <p class="footer-phone">General Inquiries (+63) 992 708 2881</p>
+            <div class="footer-socials">
+                <a href="https://www.facebook.com/asturiasbeachhouse6042" target="_blank" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+                <a href="https://m.me/asturiasbeachhouse6042" target="_blank" rel="noopener noreferrer" aria-label="Messenger"><i class="fa-brands fa-facebook-messenger"></i></a>
+                <a href="https://www.airbnb.com/rooms/27731669" target="_blank" rel="noopener noreferrer" aria-label="Airbnb"><i class="fa-brands fa-airbnb"></i></a>
+            </div>
+            <p class="footer-copyright">
+                © 2026 Asturias Beach House by Blissful Creations / All Rights Reserved
+            </p>
+        </div>
+    </footer>
+
+    <script src="global.js"></script>
+    <script src="contact.js"></script>
+</body>
+</html>
