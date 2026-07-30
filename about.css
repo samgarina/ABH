@@ -427,7 +427,7 @@
 .footer-copyright {
     font-size: 0.8rem;
     font-weight: 700;
-    color: #204b4b; /* Darker teal/black color contrast for the legal text */
+    color: #0d2b2b; /* WCAG AA fix: was #204b4b (3.1:1 fail on #4ca1a1), now ~5.7:1 */
     letter-spacing: 0.5px;
 }
 

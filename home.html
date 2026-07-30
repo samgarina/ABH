@@ -5,8 +5,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="icon" type="image/x-icon" href="images/favicon.ico">
     <title>Asturias Beach House | By Blissful Creations</title>
+    <meta name="description" content="Asturias Beach House in Brgy. Owak, Asturias, Cebu — an affordable beachfront resort with cozy rooms, home-cooked dining, and water activities. Plan your getaway today.">
+    <link rel="canonical" href="https://www.asturiasbeachhouse.com/">
     <link rel="stylesheet" href="home.css">
     <link rel="stylesheet" href="navbar.css">
+    <link rel="stylesheet" href="enhance.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 
     <meta property="og:url" content="https://www.asturiasbeachhouse.com/">
@@ -14,13 +17,40 @@
     <meta property="og:title" content="Asturias Beach House by Blissful Creations - Your Perfect Getaway">
     <meta property="og:description" content="Experience the beauty of Asturias with our beach house">
     <meta property="og:image" content="images/bh-logo.png">
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "LodgingBusiness",
+      "name": "Asturias Beach House",
+      "alternateName": "Asturias Beach House by Blissful Creations",
+      "image": "https://www.asturiasbeachhouse.com/images/bh-logo.png",
+      "url": "https://www.asturiasbeachhouse.com/",
+      "telephone": "+63-992-708-2881",
+      "priceRange": "₱₱",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "Sitio San Juan, Brgy. Owak",
+        "addressLocality": "Asturias",
+        "addressRegion": "Cebu",
+        "postalCode": "6042",
+        "addressCountry": "PH"
+      },
+      "sameAs": [
+        "https://www.facebook.com/asturiasbeachhouse6042",
+        "https://www.airbnb.com/rooms/27731669"
+      ]
+    }
+    </script>
 </head>
 <body>
+
+
+    <a class="skip-link" href="#main-content">Skip to main content</a>
 
     <!-- GLOBAL NAVBAR PLACEHOLDER -->
     <div id="global-navbar"></div>
 
-    <header class="hero-section">
+    <header class="hero-section" id="main-content">
         <div class="hero-content fade-in-element">
             <video class="hero-video" autoplay muted loop playsinline>
                 <source src="images/0521(1).mp4" type="video/mp4">
@@ -47,7 +77,7 @@
                     <a href="about.html" class="btn btn-outline">ABOUT US</a>
                 </div>
                 <div class="explore-image">
-                    <img src="images/feature-1.png" alt="Beautiful features of Asturias Beach House">
+                    <img src="images/feature-1.png" alt="Beautiful features of Asturias Beach House" loading="lazy">
                 </div>
             </div>
         </div>
@@ -87,12 +117,12 @@
         <div class="container text-center">
             <h2>GALLERY</h2>
             <div class="gallery-grid">
-                <div class="gallery-item"><img src="images/gallery1.png" alt="Beachfront camping setup"></div>
-                <div class="gallery-item"><img src="images/gallery2.png" alt="Outdoor dining with hanging flowers"></div>
-                <div class="gallery-item"><img src="images/gallery3.png" alt="Signboards pointing to activities"></div>
-                <div class="gallery-item"><img src="images/gallery4.png" alt="Sunset teepee lounge setup"></div>
-                <div class="gallery-item"><img src="images/gallery5.png" alt="Beachfront cottage at sunset"></div>
-                <div class="gallery-item"><img src="images/gallery6.png" alt="Event setup under fairy lights"></div>
+                <div class="gallery-item"><img src="images/gallery1.png" alt="Beachfront camping setup" loading="lazy"></div>
+                <div class="gallery-item"><img src="images/gallery2.png" alt="Outdoor dining with hanging flowers" loading="lazy"></div>
+                <div class="gallery-item"><img src="images/gallery3.png" alt="Signboards pointing to activities" loading="lazy"></div>
+                <div class="gallery-item"><img src="images/gallery4.png" alt="Sunset teepee lounge setup" loading="lazy"></div>
+                <div class="gallery-item"><img src="images/gallery5.png" alt="Beachfront cottage at sunset" loading="lazy"></div>
+                <div class="gallery-item"><img src="images/gallery6.png" alt="Event setup under fairy lights" loading="lazy"></div>
             </div>
             <a href="gallery.html" class="btn btn-darkteal">- SEE MORE -</a>
         </div>
@@ -170,7 +200,7 @@
     <footer class="main-footer fade-in-element">
         <div class="container text-center">
             <div class="footer-logo">
-                <img src="images/bh-logo.png" alt="Asturias Beach House Circular Logo">
+                <img src="images/bh-logo.png" alt="Asturias Beach House Circular Logo" loading="lazy">
             </div>
             <address class="footer-address">
                 Sitio San Juan, Brgy. Owak,<br>
@@ -190,6 +220,26 @@
             </p>
         </div>
     </footer>
+
+    
+    <!-- Floating contact button (appears after scrolling) -->
+    <div class="floating-contact" aria-label="Quick contact options">
+        <a href="https://m.me/asturiasbeachhouse6042" target="_blank" rel="noopener noreferrer"
+           class="fab-messenger" aria-label="Message us on Messenger">
+            <i class="fa-brands fa-facebook-messenger" aria-hidden="true"></i>
+        </a>
+        <a href="tel:+639927082881" class="fab-call" aria-label="Call Asturias Beach House">
+            <i class="fa-solid fa-phone" aria-hidden="true"></i>
+        </a>
+    </div>
+
+    <!-- Sticky mobile Book Now bar (mobile only, see enhance.css) -->
+    <div class="sticky-book-bar" aria-label="Quick booking actions">
+        <a href="https://www.airbnb.com/rooms/27731669" target="_blank" rel="noopener noreferrer"
+           class="btn-primary">Book Now</a>
+        <a href="https://m.me/asturiasbeachhouse6042" target="_blank" rel="noopener noreferrer"
+           class="btn-outline-light">Inquire</a>
+    </div>
 
     <script src="global.js"></script>
 </body>

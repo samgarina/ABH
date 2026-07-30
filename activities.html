@@ -5,9 +5,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="icon" type="image/x-icon" href="images/favicon.ico">
     <title>Activities | Asturias Beach House</title>
+    <meta name="description" content="Kayaking, bonfires, fishing, and sunset views — explore the fun experiences waiting for you at Asturias Beach House in Asturias, Cebu.">
+    <link rel="canonical" href="https://www.asturiasbeachhouse.com/activities.html">
     <link rel="stylesheet" href="activities.css">
     <link rel="stylesheet" href="home.css">
     <link rel="stylesheet" href="navbar.css">
+    <link rel="stylesheet" href="enhance.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 
     <meta property="og:url" content="https://www.asturiasbeachhouse.com/">
@@ -18,10 +21,13 @@
 </head>
 <body>
 
+
+    <a class="skip-link" href="#main-content">Skip to main content</a>
+
     <!-- GLOBAL NAVBAR PLACEHOLDER -->
     <div id="global-navbar"></div>
 
-    <header class="hero-section">
+    <header class="hero-section" id="main-content">
         <div class="hero-content fade-in-element">
             <img src="images/activities-image.png" class="hero-video" alt="Beautiful scenery at Asturias Beach House">
             <div class="hero-overlay"></div>
@@ -40,44 +46,44 @@
  
                 <!-- Row 1 -->
                 <div class="act-item">
-                    <img src="images/activitiesg1.png" alt="Surfing activity at the beach">
+                    <img src="images/activitiesg1.png" alt="Surfing activity at the beach" loading="lazy">
                 </div>
                 <div class="act-item">
-                    <img src="images/activitiesg2.png" alt="Kayaking on the calm mangrove river">
+                    <img src="images/activitiesg2.png" alt="Kayaking on the calm mangrove river" loading="lazy">
                 </div>
                 <div class="act-item">
-                    <img src="images/activitiesg3.png" alt="Fishing at sunset on the beach">
+                    <img src="images/activitiesg3.png" alt="Fishing at sunset on the beach" loading="lazy">
                 </div>
                 <div class="act-item">
-                    <img src="images/activitiesg4.png" alt="Kayaking with colorful kayaks">
+                    <img src="images/activitiesg4.png" alt="Kayaking with colorful kayaks" loading="lazy">
                 </div>
  
                 <!-- Row 2 -->
                 <div class="act-item">
-                    <img src="images/activitiesg5.png" alt="Night bonfire gathering on the beach">
+                    <img src="images/activitiesg5.png" alt="Night bonfire gathering on the beach" loading="lazy">
                 </div>
                 <div class="act-item">
-                    <img src="images/activitiesg6.png" alt="Bonfire with friends at night">
+                    <img src="images/activitiesg6.png" alt="Bonfire with friends at night" loading="lazy">
                 </div>
                 <div class="act-item">
-                    <img src="images/activitiesg7.png" alt="Stunning sunset view from the beach">
+                    <img src="images/activitiesg7.png" alt="Stunning sunset view from the beach" loading="lazy">
                 </div>
                 <div class="act-item">
-                    <img src="images/activitiesg8.png" alt="Stand up paddle boarding activity">
+                    <img src="images/activitiesg8.png" alt="Stand up paddle boarding activity" loading="lazy">
                 </div>
  
                 <!-- Row 3 -->
                 <div class="act-item">
-                    <img src="images/activitiesg9.png" alt="Kayaking adventure through mangroves">
+                    <img src="images/activitiesg9.png" alt="Kayaking adventure through mangroves" loading="lazy">
                 </div>
                 <div class="act-item">
-                    <img src="images/activitiesg10.png" alt="Green kayak on calm water">
+                    <img src="images/activitiesg10.png" alt="Green kayak on calm water" loading="lazy">
                 </div>
                 <div class="act-item">
-                    <img src="images/activitiesg11.png" alt="Romantic gazebo setup on the beach">
+                    <img src="images/activitiesg11.png" alt="Romantic gazebo setup on the beach" loading="lazy">
                 </div>
                 <div class="act-item">
-                    <img src="images/activitiesg12.png" alt="Evening bonfire and camping setup">
+                    <img src="images/activitiesg12.png" alt="Evening bonfire and camping setup" loading="lazy">
                 </div>
  
             </div>
@@ -104,7 +110,7 @@
             </div>
  
             <div class="makehome-image">
-                <img src="images/activities-camp.png" alt="Camping tents set up on the beach at sunset with chairs around">
+                <img src="images/activities-camp.png" alt="Camping tents set up on the beach at sunset with chairs around" loading="lazy">
             </div>
  
         </div>
@@ -127,7 +133,7 @@
     <footer class="main-footer fade-in-element">
         <div class="container text-center">
             <div class="footer-logo">
-                <img src="images/bh-logo.png" alt="Asturias Beach House Circular Logo">
+                <img src="images/bh-logo.png" alt="Asturias Beach House Circular Logo" loading="lazy">
             </div>
             <address class="footer-address">
                 Sitio San Juan, Brgy. Owak,<br>
@@ -147,6 +153,26 @@
             </p>
         </div>
     </footer>
+
+    
+    <!-- Floating contact button (appears after scrolling) -->
+    <div class="floating-contact" aria-label="Quick contact options">
+        <a href="https://m.me/asturiasbeachhouse6042" target="_blank" rel="noopener noreferrer"
+           class="fab-messenger" aria-label="Message us on Messenger">
+            <i class="fa-brands fa-facebook-messenger" aria-hidden="true"></i>
+        </a>
+        <a href="tel:+639927082881" class="fab-call" aria-label="Call Asturias Beach House">
+            <i class="fa-solid fa-phone" aria-hidden="true"></i>
+        </a>
+    </div>
+
+    <!-- Sticky mobile Book Now bar (mobile only, see enhance.css) -->
+    <div class="sticky-book-bar" aria-label="Quick booking actions">
+        <a href="https://www.airbnb.com/rooms/27731669" target="_blank" rel="noopener noreferrer"
+           class="btn-primary">Book Now</a>
+        <a href="https://m.me/asturiasbeachhouse6042" target="_blank" rel="noopener noreferrer"
+           class="btn-outline-light">Inquire</a>
+    </div>
 
     <script src="global.js"></script>
 

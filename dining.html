@@ -5,9 +5,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="icon" type="image/x-icon" href="images/favicon.ico">
     <title>Dining | Asturias Beach House</title>
+    <meta name="description" content="Enjoy fresh, home-cooked Filipino meals with an ocean view at the Asturias Beach House dining area in Asturias, Cebu.">
+    <link rel="canonical" href="https://www.asturiasbeachhouse.com/dining.html">
     <link rel="stylesheet" href="dining.css">
     <link rel="stylesheet" href="home.css">
     <link rel="stylesheet" href="navbar.css">
+    <link rel="stylesheet" href="enhance.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 
     <meta property="og:url" content="https://www.asturiasbeachhouse.com/">
@@ -18,10 +21,13 @@
 </head>
 <body>
 
+
+    <a class="skip-link" href="#main-content">Skip to main content</a>
+
     <!-- GLOBAL NAVBAR PLACEHOLDER -->
     <div id="global-navbar"></div>
 
-    <header class="hero-section">
+    <header class="hero-section" id="main-content">
         <div class="hero-content fade-in-element">
             <img src="images/dining-image.png" class="hero-video" alt="Beautiful scenery at Asturias Beach House">
             <div class="hero-overlay"></div>
@@ -51,7 +57,7 @@
     <footer class="main-footer fade-in-element">
         <div class="container text-center">
             <div class="footer-logo">
-                <img src="images/bh-logo.png" alt="Asturias Beach House Circular Logo">
+                <img src="images/bh-logo.png" alt="Asturias Beach House Circular Logo" loading="lazy">
             </div>
             <address class="footer-address">
                 Sitio San Juan, Brgy. Owak,<br>
@@ -72,6 +78,26 @@
         </div>
     </footer>
     
+    
+    <!-- Floating contact button (appears after scrolling) -->
+    <div class="floating-contact" aria-label="Quick contact options">
+        <a href="https://m.me/asturiasbeachhouse6042" target="_blank" rel="noopener noreferrer"
+           class="fab-messenger" aria-label="Message us on Messenger">
+            <i class="fa-brands fa-facebook-messenger" aria-hidden="true"></i>
+        </a>
+        <a href="tel:+639927082881" class="fab-call" aria-label="Call Asturias Beach House">
+            <i class="fa-solid fa-phone" aria-hidden="true"></i>
+        </a>
+    </div>
+
+    <!-- Sticky mobile Book Now bar (mobile only, see enhance.css) -->
+    <div class="sticky-book-bar" aria-label="Quick booking actions">
+        <a href="https://www.airbnb.com/rooms/27731669" target="_blank" rel="noopener noreferrer"
+           class="btn-primary">Book Now</a>
+        <a href="https://m.me/asturiasbeachhouse6042" target="_blank" rel="noopener noreferrer"
+           class="btn-outline-light">Inquire</a>
+    </div>
+
     <script src="global.js"></script>
 
 </body>
