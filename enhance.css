@@ -1,0 +1,245 @@
+/* ==========================================================================
+   ENHANCE.CSS — shared premium-polish layer, loaded after page CSS
+   Safe to add to every page without touching existing layout rules.
+   ========================================================================== */
+
+/* ---------- Accessibility: skip link ---------- */
+.skip-link {
+    position: fixed;
+    top: -60px;
+    left: 12px;
+    z-index: 10000;
+    background: var(--dark-charcoal, #1a1a1a);
+    color: #fff;
+    padding: 10px 18px;
+    border-radius: 6px;
+    font-size: 0.85rem;
+    font-weight: 600;
+    text-decoration: none;
+    transition: top 0.25s ease;
+}
+.skip-link:focus {
+    top: 12px;
+}
+
+/* ---------- Accessibility: global focus ring ---------- */
+a:focus-visible,
+button:focus-visible,
+[tabindex]:focus-visible {
+    outline: 2px solid var(--primary-teal, #2D8282);
+    outline-offset: 3px;
+}
+
+/* ---------- Card hover-lift refinement ----------
+   Layers on top of existing .room-card / .gallery-item / .act-item /
+   .feature-item rules without overriding their base layout. */
+.room-card,
+.gallery-item,
+.act-item {
+    will-change: transform;
+}
+
+.room-card:hover,
+.gallery-item:hover,
+.act-item:hover {
+    box-shadow: 0 14px 34px rgba(0, 0, 0, 0.22);
+}
+
+/* Image zoom-in-frame on hover (adds richness without layout shift) */
+.gallery-item img,
+.act-item img {
+    transition: transform 0.5s cubic-bezier(0.22, 1, 0.36, 1), filter 0.4s ease;
+}
+.gallery-item:hover img,
+.act-item:hover img {
+    transform: scale(1.08);
+}
+
+.feature-item .feature-icon {
+    transition: transform 0.35s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+.feature-item:hover .feature-icon {
+    transform: translateY(-4px) scale(1.08);
+}
+
+/* ---------- Buttons: consistent premium press/hover feedback ---------- */
+.btn {
+    position: relative;
+    overflow: hidden;
+}
+.btn:active {
+    transform: scale(0.97);
+}
+@media (hover: hover) {
+    .btn:hover {
+        box-shadow: 0 6px 18px rgba(0, 0, 0, 0.18);
+    }
+}
+
+/* ---------- Fade-in-on-scroll (paired with IntersectionObserver in global.js) ---------- */
+.fade-in-element {
+    opacity: 0;
+    transform: translateY(24px);
+    transition: opacity 0.7s ease, transform 0.7s cubic-bezier(0.22, 1, 0.36, 1);
+    will-change: opacity, transform;
+}
+.fade-in-element.active {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* ---------- Lightbox ---------- */
+.lightbox-overlay {
+    position: fixed;
+    inset: 0;
+    z-index: 4000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(10, 14, 14, 0.92);
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s ease;
+    padding: 5vh 5vw;
+}
+.lightbox-overlay.is-open {
+    opacity: 1;
+    visibility: visible;
+}
+.lightbox-image {
+    max-width: 100%;
+    max-height: 90vh;
+    border-radius: 8px;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
+    object-fit: contain;
+}
+.lightbox-close {
+    position: absolute;
+    top: 20px;
+    right: 24px;
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    border: none;
+    background: rgba(255, 255, 255, 0.12);
+    color: #fff;
+    font-size: 1.6rem;
+    line-height: 1;
+    cursor: pointer;
+    transition: background 0.25s ease;
+}
+.lightbox-close:hover,
+.lightbox-close:focus-visible {
+    background: rgba(255, 255, 255, 0.25);
+}
+
+/* ---------- Floating contact button (desktop + mobile) ---------- */
+.floating-contact {
+    position: fixed;
+    right: 20px;
+    bottom: 20px;
+    z-index: 900;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 10px;
+    opacity: 0;
+    transform: translateY(16px);
+    pointer-events: none;
+    transition: opacity 0.3s ease, transform 0.3s ease;
+}
+.floating-contact.is-visible {
+    opacity: 1;
+    transform: translateY(0);
+    pointer-events: auto;
+}
+.floating-contact a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 52px;
+    height: 52px;
+    border-radius: 50%;
+    background: var(--primary-teal, #2D8282);
+    color: #fff;
+    font-size: 1.25rem;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.25);
+    transition: transform 0.25s ease, background 0.25s ease;
+}
+.floating-contact a:hover,
+.floating-contact a:focus-visible {
+    background: var(--dark-teal, #388687);
+    transform: translateY(-3px) scale(1.05);
+}
+.floating-contact .fab-messenger { background: #0084ff; }
+.floating-contact .fab-call { background: var(--dark-charcoal, #1a1a1a); }
+
+/* ---------- Sticky mobile "Book Now" bar ---------- */
+.sticky-book-bar {
+    display: none;
+}
+@media (max-width: 640px) {
+    .sticky-book-bar {
+        display: flex;
+        position: fixed;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        z-index: 950;
+        gap: 10px;
+        padding: 10px 14px calc(10px + env(safe-area-inset-bottom));
+        background: rgba(10, 20, 20, 0.94);
+        backdrop-filter: blur(10px);
+        -webkit-backdrop-filter: blur(10px);
+        border-top: 1px solid rgba(255, 255, 255, 0.12);
+    }
+    .sticky-book-bar a {
+        flex: 1;
+        text-align: center;
+        padding: 12px 10px;
+        min-height: 44px; /* touch target size */
+        border-radius: 30px;
+        font-size: 0.78rem;
+        font-weight: 700;
+        letter-spacing: 1px;
+        text-transform: uppercase;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    .sticky-book-bar .btn-primary {
+        background: var(--primary-teal, #2D8282);
+        color: #fff;
+    }
+    .sticky-book-bar .btn-outline-light {
+        background: transparent;
+        border: 1.5px solid rgba(255, 255, 255, 0.6);
+        color: #fff;
+    }
+    /* keep floating contact button from overlapping the sticky bar */
+    .floating-contact { bottom: 78px; }
+    /* prevent content being hidden behind the sticky bar */
+    body { padding-bottom: 64px; }
+}
+
+/* ---------- Larger touch targets on mobile (nav + buttons) ---------- */
+@media (max-width: 640px) {
+    .nav-links a { padding: 10px 4px; display: inline-block; }
+    .btn { min-height: 44px; display: inline-flex; align-items: center; justify-content: center; }
+}
+
+/* ---------- Reduced motion: respect user preference everywhere ---------- */
+@media (prefers-reduced-motion: reduce) {
+    .fade-in-element,
+    .gallery-item img,
+    .act-item img,
+    .feature-item .feature-icon,
+    .lightbox-overlay,
+    .floating-contact,
+    .btn {
+        transition: none !important;
+        animation: none !important;
+        transform: none !important;
+    }
+    .fade-in-element { opacity: 1; }
+}
