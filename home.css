@@ -241,15 +241,18 @@ address { font-style: normal; }
     color: #fff;
 }
 
-/* --- RIGHT COLUMN IMAGE --- */
+/* --- RIGHT COLUMN IMAGE ---
+   Superseded by explore-slideshow.css, which now controls .explore-image
+   sizing and the .explore-slide images inside it (crossfade slideshow).
+   Left here commented out for reference only — do not re-enable.
 .explore-image img {
     width: 100%;
     height: auto;
     max-height: 500px;
     object-fit: cover;
     display: block;
-    /* Removed the massive margin-top so it aligns perfectly with the text */
 }
+*/
 
 /* --- RESPONSIVE DESIGN (MOBILE) --- */
 @media (max-width: 768px) {
@@ -652,7 +655,7 @@ address { font-style: normal; }
    ========================================================================== */
 @media (max-width: 607px) {
     .explore-grid      { grid-template-columns: 1fr; gap: 36px; }
-    .explore-image img { height: 525px; }
+    /* .explore-image height is now controlled by explore-slideshow.css */
     .rooms-grid        { grid-template-columns: 1fr 1fr; }
     .features-grid     { grid-template-columns: 1fr 1fr; gap: 24px; }
     .gallery-grid      { grid-template-rows: repeat(2, 160px); }

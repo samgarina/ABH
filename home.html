@@ -8,6 +8,7 @@
     <meta name="description" content="Asturias Beach House in Brgy. Owak, Asturias, Cebu — an affordable beachfront resort with cozy rooms, home-cooked dining, and water activities. Plan your getaway today.">
     <link rel="canonical" href="https://www.asturiasbeachhouse.com/">
     <link rel="stylesheet" href="home.css">
+    <link rel="stylesheet" href="explore-slideshow.css">
     <link rel="stylesheet" href="navbar.css">
     <link rel="stylesheet" href="enhance.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
@@ -76,8 +77,36 @@
                     <p>Your dream beach getaway doesn't have to break the bank. Asturias Beach House offers affordable accommodations, delicious meals, and exciting water activities with no entrance fee. Bring your barkada or family to Asturias, Cebu and make unforgettable memories.</p>
                     <a href="about.html" class="btn btn-outline">ABOUT US</a>
                 </div>
-                <div class="explore-image">
-                    <img src="images/feature-1.png" alt="Beautiful features of Asturias Beach House" loading="lazy">
+                <div class="explore-image" id="exploreSlideshow">
+                    <div class="explore-slideshow">
+
+                        <img class="explore-slide is-active" src="images/feature-1.webp"
+                             alt="Beautiful features of Asturias Beach House" loading="eager">
+                        <img class="explore-slide" src="images/about-image.webp"
+                             alt="Asturias Beach House exterior surrounded by nature" loading="lazy">
+                        <img class="explore-slide" src="images/dining-image.webp"
+                             alt="Dining area at Asturias Beach House" loading="lazy">
+                        <img class="explore-slide" src="images/activities-image.webp"
+                             alt="Guests enjoying activities at Asturias Beach House" loading="lazy">
+                        <img class="explore-slide" src="images/spotlight-image.webp"
+                             alt="Sunset view at Asturias Beach House" loading="lazy">
+
+                        <button type="button" class="explore-arrow explore-arrow--prev" aria-label="Previous image">
+                            <i class="fa-solid fa-chevron-left" aria-hidden="true"></i>
+                        </button>
+                        <button type="button" class="explore-arrow explore-arrow--next" aria-label="Next image">
+                            <i class="fa-solid fa-chevron-right" aria-hidden="true"></i>
+                        </button>
+
+                        <div class="explore-dots" role="tablist" aria-label="Choose a photo to display">
+                            <button type="button" class="explore-dot is-active" role="tab" aria-selected="true" aria-label="Show image 1"></button>
+                            <button type="button" class="explore-dot" role="tab" aria-selected="false" aria-label="Show image 2"></button>
+                            <button type="button" class="explore-dot" role="tab" aria-selected="false" aria-label="Show image 3"></button>
+                            <button type="button" class="explore-dot" role="tab" aria-selected="false" aria-label="Show image 4"></button>
+                            <button type="button" class="explore-dot" role="tab" aria-selected="false" aria-label="Show image 5"></button>
+                        </div>
+
+                    </div>
                 </div>
             </div>
         </div>
@@ -241,6 +270,7 @@
            class="btn-outline-light">Inquire</a>
     </div>
 
+    <script src="explore-slideshow.js" defer></script>
     <script src="global.js"></script>
 </body>
 </html>

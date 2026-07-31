@@ -1,0 +1,126 @@
+/* ==========================================================================
+   EXPLORE IMAGE SLIDESHOW — modular, self-contained
+   Enhances the existing .explore-image container from home.css into an
+   automatic crossfade slideshow. Does not alter the surrounding
+   .explore-grid / .explore-content layout in any way.
+   ========================================================================== */
+
+/* ---------- Container ----------
+   Fixed height = no layout shift when slides change, and it locks the
+   visual size/position to match what the single image used to occupy. */
+.explore-image {
+    position: relative;
+    height: 500px;
+    max-height: 500px;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.12);
+}
+
+.explore-slideshow {
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+
+/* ---------- Slides ----------
+   All slides stack in the same spot; only opacity changes.
+   Higher specificity (two classes) than the old ".explore-image img"
+   rule in home.css, so it wins even if that rule is ever re-enabled. */
+.explore-image .explore-slide {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 1s ease-in-out;
+    will-change: opacity;
+}
+
+.explore-image .explore-slide.is-active {
+    opacity: 1;
+    pointer-events: auto;
+}
+
+/* ---------- Navigation dots ---------- */
+.explore-dots {
+    position: absolute;
+    left: 50%;
+    bottom: 16px;
+    transform: translateX(-50%);
+    display: flex;
+    gap: 8px;
+    z-index: 3;
+}
+
+.explore-dot {
+    width: 9px;
+    height: 9px;
+    padding: 0;
+    border: none;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.5);
+    cursor: pointer;
+    transition: background 0.3s ease, transform 0.3s ease;
+}
+.explore-dot:hover { background: rgba(255, 255, 255, 0.8); }
+.explore-dot.is-active {
+    background: #ffffff;
+    transform: scale(1.25);
+}
+
+/* ---------- Prev / Next arrows — hidden until the image is hovered ---------- */
+.explore-arrow {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 38px;
+    height: 38px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: none;
+    border-radius: 50%;
+    background: rgba(0, 0, 0, 0.35);
+    color: #ffffff;
+    font-size: 0.9rem;
+    cursor: pointer;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.3s ease, background 0.3s ease;
+    z-index: 3;
+}
+.explore-image:hover .explore-arrow,
+.explore-arrow:focus-visible {
+    opacity: 1;
+    pointer-events: auto;
+}
+.explore-arrow:hover { background: rgba(0, 0, 0, 0.6); }
+.explore-arrow--prev { left: 14px; }
+.explore-arrow--next { right: 14px; }
+
+/* ---------- Accessibility ---------- */
+.explore-dot:focus-visible,
+.explore-arrow:focus-visible {
+    outline: 2px solid #ffffff;
+    outline-offset: 2px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .explore-image .explore-slide {
+        transition: none;
+    }
+}
+
+/* ---------- Responsive — mirrors home.css breakpoints ---------- */
+@media (max-width: 768px) {
+    .explore-image { height: 420px; }
+}
+
+@media (max-width: 607px) {
+    .explore-image { height: 320px; }
+    .explore-arrow { width: 32px; height: 32px; font-size: 0.78rem; }
+}
