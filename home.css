@@ -1,17 +1,13 @@
-/* ==========================================================================
-   1. CORE STYLES, CUSTOM FONTS & VARIABLES (UPDATED)
-   ========================================================================== */
 @import url('https://fonts.googleapis.com/css2?family=Heebo:wght@400;600;700;800&family=Kaisei+Decol:wght@700&family=Kaisei+Tokumin:wght@700&family=Krona+One&display=swap');
 
 :root {
-    --primary-teal: #2D8282;      /* Main teal color used in Gallery & CTA sections */
-    --dark-teal: #388687;         /* Darker teal for buttons and hover states */
-    --soft-gold: #877638;         /* Gold color used for subtitles like 'Your home away from home' */
-    --dark-charcoal: #1A1A1A;     /* Used for primary text, review buttons, and deep backgrounds */
-    --light-gray: #F9F9F9;        /* Light background tint for cards/sections */
-    --white: #FFFFFF;/* ==========================================================================
+    --primary-teal: #2D8282;      
+    --dark-teal: #388687;         
+    --soft-gold: #877638;        
+    --dark-charcoal: #1A1A1A;      
+    --light-gray: #F9F9F9;        
+    --white: #FFFFFF;
 
-/* ---------- 1. FONTS & VARIABLES ---------- */
 @import url('https://fonts.googleapis.com/css2?family=Heebo:wght@400;600;700;800&family=Kaisei+Decol:wght@700&family=Kaisei+Tokumin:wght@700&family=Krona+One&family=Dancing+Script:wght@700&display=swap');
 @import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css');
 
@@ -22,7 +18,7 @@
     --dark-charcoal:  #1A1A1A;
     --light-gray:     #F9F9F9;
     --white:          #FFFFFF;
-    --review-bg:      #f5f0e8;   /* warm parchment for review card */
+    --review-bg:      #f5f0e8;  
 
     --font-nav:       'Krona One', sans-serif;
     --font-heading-primary:   'Kaisei Tokumin', serif;
@@ -31,7 +27,6 @@
     --font-script:    'Dancing Script', cursive;
 }
 
-/* ---------- 2. RESET ---------- */
 *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
 html { scroll-behavior: smooth; }
 body {
@@ -45,7 +40,6 @@ a { text-decoration: none; color: inherit; }
 ul { list-style: none; }
 address { font-style: normal; }
 
-/* ---------- 3. CONTAINER ---------- */
 .container {
     width: 90%;
     max-width: 1100px;
@@ -54,7 +48,7 @@ address { font-style: normal; }
 }
 .text-center { text-align: center; }
 
-/*  BUTTONS */
+
 .btn {
     display: inline-block;
     font-family: var(--font-body);
@@ -69,7 +63,6 @@ address { font-style: normal; }
 }
 .btn:hover { transform: translateY(-2px); }
 
-/* teal filled — used in hero & CTA */
 .btn-primary,
 .btn-teal {
     font-family: var(--font-heading-primary);
@@ -80,7 +73,6 @@ address { font-style: normal; }
 .btn-primary:hover,
 .btn-teal:hover { background: var(--dark-teal); border-color: var(--dark-teal); }
 
-/*about us button */
 .btn-outline {
     background: transparent;
     color: var(--primary-teal);
@@ -88,7 +80,6 @@ address { font-style: normal; }
 }
 .btn-outline:hover { background: var(--primary-teal); color: var(--white); }
 
-/* gallery SEE MORE, reviews button */
 .btn-darkteal {
     background: #2d5d5f;
     color: var(--white);
@@ -105,9 +96,7 @@ address { font-style: normal; }
 
 .btn-sm { padding: 7px 20px; font-size: 0.72rem; }
 
-/* ==========================================================================
-   5. HERO / HEADER
-   ========================================================================== */
+
 .hero-section {
     position: relative;
     min-height: 100vh;
@@ -118,7 +107,7 @@ address { font-style: normal; }
     flex-direction: column;
 }
 
-/* ---- HERO CONTENT ---- */
+
 .hero-content {
     flex: 1;
     display: flex;
@@ -149,7 +138,6 @@ address { font-style: normal; }
     margin-bottom: 32px;
 }
 
-/* section part */
 .explore-section {
     background: var(--white);
     padding: 60px 0; 
@@ -183,11 +171,10 @@ address { font-style: normal; }
     font-family: var(--font-body);
     font-size: 1.1rem;
     color: var(--soft-gold);
-    letter-spacing: 0.15em; /* Fixed from 15% */
+    letter-spacing: 0.15em;
     margin-bottom: 120px;
 }
 
-/* --- GRID LAYOUT --- */
 .explore-grid {
     display: grid;
     grid-template-columns: 1fr 1fr;
@@ -222,7 +209,7 @@ address { font-style: normal; }
     letter-spacing: 8%;
 }
 
-/* --- PILL BUTTON STYLE --- */
+
 .btn-outline {
     display: inline-block;
     padding: 10px 35px;
@@ -241,20 +228,7 @@ address { font-style: normal; }
     color: #fff;
 }
 
-/* --- RIGHT COLUMN IMAGE ---
-   Superseded by explore-slideshow.css, which now controls .explore-image
-   sizing and the .explore-slide images inside it (crossfade slideshow).
-   Left here commented out for reference only — do not re-enable.
-.explore-image img {
-    width: 100%;
-    height: auto;
-    max-height: 500px;
-    object-fit: cover;
-    display: block;
-}
-*/
 
-/* --- RESPONSIVE DESIGN (MOBILE) --- */
 @media (max-width: 768px) {
     .explore-grid {
         grid-template-columns: 1fr; /* Stacks column on top of each other on mobile devices */
@@ -262,9 +236,6 @@ address { font-style: normal; }
     }
 }
 
-/* ==========================================================================
-   7. OUR ROOMS SECTION
-   ========================================================================== */
 .rooms-section {
     background: var(--light-gray);
 }
@@ -336,7 +307,6 @@ address { font-style: normal; }
     margin-bottom: 12px;
 }
 
-/* 8. GALLERY SECTION*/
 .gallery-section {
     background: #388687;
 }
@@ -373,9 +343,6 @@ address { font-style: normal; }
     object-fit: cover;
 }
 
-/* ==========================================================================
-   9. GUEST REVIEWS SECTION
-   ========================================================================== */
 .reviews-section {
     background:
         linear-gradient(rgba(0,0,0,0.2), rgba(0,0,0,0.2)),
@@ -434,9 +401,6 @@ address { font-style: normal; }
     margin-bottom: 20px;
 }
 
-/* ==========================================================================
-   10. FEATURES SECTION
-   ========================================================================== */
 .features-section {
     background: var(--white);
     border-top: 1px solid #eee;
@@ -487,7 +451,6 @@ address { font-style: normal; }
     line-height: 1.75;
 }
 
-/*  11. MAP SECTION*/
 .map-section {
     background: var(--light-gray);
 }
@@ -510,16 +473,15 @@ address { font-style: normal; }
 
 .map-container iframe { display: block; }
 
-/* 12. CTA SECTION */
 
 .cta-section {
-    background: #ffffff; /* White background matching your image */
+    background: #ffffff; 
     padding: 80px 0 40px;
     text-align: center;
 }
 
-.cta-section h2 {
-    font-family: var(--font-heading-primary), sans-serif; /* Changed from script to match image */
+.cta-section h2 {/*
+    font-family: var(--font-heading-primary), sans-serif;  Changed from script to match image */
     font-size: clamp(2.2rem, 5vw, 3.2rem);
     font-weight: 700;
     line-height: 1.25;
@@ -548,7 +510,6 @@ address { font-style: normal; }
     flex-wrap: wrap;
 }
 
-/* override teal buttons inside teal bg to be white-bordered */
 .cta-section .btn-teal {
     background: #3b8b8b; /* Solid teal background */
     color: #ffffff;
@@ -570,11 +531,9 @@ address { font-style: normal; }
     background: #4ca1a1; /* Matches the main footer background color */
     height: 140px;
     width: 100%;
-    /* Creates the exact jagged landscape/mountain peaks matching the picture */
     clip-path: polygon(0% 45%, 18% 65%, 50% 25%, 82% 75%, 100% 35%, 100% 100%, 0% 100%);
     margin-bottom: -1px; /* Prevents tiny layout gaps between elements */
 }
- /*footer section*/
 .main-footer {
     background: #4ca1a1; /* Teal background instead of charcoal */
     color: #ffffff; /* All text switched to crisp white */
@@ -629,7 +588,7 @@ address { font-style: normal; }
     width: 40px;
     height: 40px;
     border-radius: 50%;
-    background: #333333; /* Dark/Charcoal circular background for the icons */
+    background: #333333; 
     display: flex;
     align-items: center;
     justify-content: center;
@@ -650,12 +609,8 @@ address { font-style: normal; }
     letter-spacing: 0.5px;
 }
 
-/* ==========================================================================
-   14. RESPONSIVE
-   ========================================================================== */
 @media (max-width: 607px) {
     .explore-grid      { grid-template-columns: 1fr; gap: 36px; }
-    /* .explore-image height is now controlled by explore-slideshow.css */
     .rooms-grid        { grid-template-columns: 1fr 1fr; }
     .features-grid     { grid-template-columns: 1fr 1fr; gap: 24px; }
     .gallery-grid      { grid-template-rows: repeat(2, 160px); }
@@ -675,8 +630,6 @@ address { font-style: normal; }
     .left-nav, .right-nav { display: none; } /* collapses nav on very small; add hamburger if needed */
 }
 
-    
-    /* Assigned fonts per your mockup styling rules */
     --font-nav: 'Krona One', sans-serif;
     --font-heading-primary: 'Kaisei Tokumin', serif;
     --font-heading-secondary: 'Kaisei Decol', serif;
@@ -712,11 +665,7 @@ body {
     text-align: center;
 }
 
-/* ==========================================================================
-   UPDATED FONT ASSIGNMENTS FOR YOUR SPECIFIC UTILITIES
-   ========================================================================== */
 
-/* Navbar links using Krona One */
 .nav-links a {
     font-family: var(--font-nav);
     font-weight: 400; /* Krona One only comes in regular */
@@ -727,7 +676,6 @@ body {
     transition: color 0.3s ease;
 }
 
-/* --- THE CONTAINER --- */
 .hero-content {
     position: relative; /* Acts as the anchor for the absolute positioned elements */
     width: 100%;
@@ -781,7 +729,6 @@ body {
 }
 
 
-/* Section titles ("EXPLORE THE PARADISE", "OUR ROOMS") using Kaisei Decol Bold */
 .explore-text h2,
 .gallery-section h2,
 .reviews-section h2 {
@@ -804,7 +751,6 @@ body {
     margin-top: 20px;
 }
 
-/* Sub-headings and smaller element bolding using Heebo weights */
 .explore-text h3 {
     font-family: var(--font-body);
     font-weight: 700; /* Heebo Bold */
@@ -825,7 +771,6 @@ body {
     font-weight: 600; /* Heebo SemiBold for clean button interfaces */
 }
 
-/* 15. DISSOLVE ANIMATION (EXCLUDING FIXED NAVBAR) */
 .fade-in-element {
     opacity: 0;
     will-change: opacity;
