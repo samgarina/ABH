@@ -1,21 +1,3 @@
-/*
- * Contact form handler for Asturias Beach House.
- *
- * SETUP REQUIRED (one-time, ~2 minutes):
- * 1. Go to https://formspree.io and create a free account.
- * 2. Create a new form and point it at asturiasbeachhouse@gmail.com.
- * 3. Copy the endpoint it gives you, e.g. "https://formspree.io/f/abcdwxyz".
- * 4. Paste that endpoint below, replacing FORM_ENDPOINT.
- *
- * Until FORM_ENDPOINT is set, the form will show a friendly error instead
- * of silently failing.
- *
- * Spam protection: the hidden "_gotcha" field is a honeypot. Real visitors
- * never see or fill it (it's visually hidden via CSS), but simple spam bots
- * that auto-fill every input will trip it, and Formspree silently discards
- * those submissions.
- */
-
 const FORM_ENDPOINT = 'https://formspree.io/f/mljrgypb'; // REPLACE_WITH_YOUR_FORM_ID
 
 document.addEventListener('DOMContentLoaded', () => {
