@@ -12,7 +12,7 @@
     align-items: center;
     justify-content: center;
     padding: 14px 24px;
-    background: rgba(10, 20, 20, 0.38);
+    background: rgba(49, 56, 56, 0.38);
     backdrop-filter: blur(14px) saturate(150%);
     -webkit-backdrop-filter: blur(14px) saturate(150%);
     border-bottom: 1px solid rgba(255, 255, 255, 0.10);
@@ -22,7 +22,7 @@
 /* Shrinks and deepens once the page scrolls (toggled by global.js) */
 .navbar.is-scrolled {
     padding: 8px 24px;
-    background: rgba(8, 16, 16, 0.72);
+    background: rgba(41, 63, 63, 0.72);
     box-shadow: 0 4px 24px rgba(0, 0, 0, 0.18);
 }
 
