@@ -156,6 +156,51 @@ address { font-style: normal; }
     background: linear-gradient(to bottom, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.4) 50%);
 }
 
+.activities-intro-section .container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.activities-intro-section h2 {
+    font-family: var(--font-heading-secondary);
+    font-weight: 700;
+    font-size: clamp(1.6rem, 3vw, 2.4rem);
+    color: var(--white);
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    margin-bottom: 36px;
+    text-align: center;
+}
+
+.activities-card {
+    background: #388687;
+    border-radius: 12px;
+    padding: 44px 52px;
+    max-width: 740px;
+    width: 100%;
+    text-align: center;
+    box-shadow: 0 8px 36px rgba(0,0,0,0.22);
+}
+
+.activities-title {
+    font-family: var(--font-heading-secondary);
+    font-weight: 700;
+    font-size: clamp(1.4rem, 4.5vw, 1.9rem);
+    color: var(--white);
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    margin-bottom: 24px;
+
+}
+
+.activities-text {
+    font-size: 0.93rem;
+    color: white;
+    line-height: 1.95;
+}
+
+
 .activities-grid-section {
     background: var(--white);
     padding: 10px 0 50px;
