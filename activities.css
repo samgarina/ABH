@@ -207,11 +207,11 @@ address { font-style: normal; }
 }
 
 .activities-list li {
-    font-size: 0.93rem;
+    font-size: 1rem;
     color: white;
     line-height: 1.95;
     margin-bottom: 10px;
-    text-align: left;
+    text-align: justify;
     padding: 5px 10px;
 }
 
