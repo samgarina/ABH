@@ -114,7 +114,7 @@
   const slides = Array.from(wrapper.querySelectorAll('.review-slide'));
   if (slides.length < 2) return;
 
-  const AUTOPLAY_MS = 4000;
+  const AUTOPLAY_MS = 6000;
   const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
   let current = Math.max(0, slides.findIndex(s => s.classList.contains('is-active')));

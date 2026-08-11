@@ -4,6 +4,7 @@
    ========================================================================== */
 
 .contact-section {
+    margin-top: 60px;
     background: var(--light-gray, #F9F9F9);
 }
 
