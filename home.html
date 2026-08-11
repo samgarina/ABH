@@ -54,7 +54,7 @@
     <header class="hero-section" id="main-content">
         <div class="hero-content fade-in-element">
             <video class="hero-video" autoplay muted loop playsinline>
-                <source src="images/0521(1).webm" type="video/mp4">
+                <source src="images/0521(1).webm" type="video/webm">
             </video>
             <div class="hero-overlay"></div>
             <div class="hero-text">
@@ -158,12 +158,28 @@
     </section>
 
     <section class="reviews-section fade-in-element">
-        <div class="container">
-            <h2>GUEST REVIEWS</h2>
+        <div class="container" id="reviewSlideshow">
+        <h2>GUEST REVIEWS</h2>
             <div class="review-card">
-                <span class="quote-icon">"</span>
+            <span class="quote-icon">"</span>
+
+      <!-- Wrapper holds grid layout for equal sizing -->
+            <div class="review-slides-wrapper">
+                <div class="review-slide is-active">
                 <p class="review-text">Outstanding stay at Asturias Beach House by Blissful Creations! From the luxurious accommodations to the delicious food and exceptional service, our family felt incredibly well-cared for. Kudos to the whole team, from the boss to the staff, for making our experience memorable! Highly recommend!</p>
                 <p class="review-author">by Abe Gail</p>
+            </div>
+
+                <div class="review-slide">
+                <p class="review-text">Definitely recommend this resort! Great place to unwind. The place is big and plenty of instagrammable spots including a front view of the sunset AND sunrise. May not be your usual white beach but the clean and cold waters definitely quenches the sticky hot feels of the summer. Best part for me is you'll never run out of place for some "me" time and reset your thoughts from the busy city life. To top it all off, they have affordable food and great staff! I say five stars</p>
+                <p class="review-author">by Darry Malinao</p>
+                </div>
+
+                <div class="review-slide">
+                <p class="review-text">Best place for all nature lovers 💚Affordable food and accommodation, staffs always have smiles 😊 on their faces. Must try their Mords Halo Halo too. Will definitely go back and try their dolphin watching next time.</p>
+                <p class="review-author">by Genalin Odie Ortiz</p>
+                </div>
+            </div>
                 <a href="https://www.facebook.com/asturiasbeachhouse6042/reviews" class="btn btn-dark btn-sm" target="_blank" rel="noopener noreferrer">- More Reviews -</a>
             </div>
         </div>

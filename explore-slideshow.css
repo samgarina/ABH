@@ -1,13 +1,3 @@
-/* ==========================================================================
-   EXPLORE IMAGE SLIDESHOW — modular, self-contained
-   Enhances the existing .explore-image container from home.css into an
-   automatic crossfade slideshow. Does not alter the surrounding
-   .explore-grid / .explore-content layout in any way.
-   ========================================================================== */
-
-/* ---------- Container ----------
-   Fixed height = no layout shift when slides change, and it locks the
-   visual size/position to match what the single image used to occupy. */
 .explore-image {
     position: relative;
     height: 500px;

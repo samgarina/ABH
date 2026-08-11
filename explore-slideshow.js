@@ -104,3 +104,44 @@
     /* ---------- Init ---------- */
     preloadAll().then(startAutoplay);
 })();
+
+/*review section */
+
+(function () {
+  const wrapper = document.getElementById('reviewSlideshow');
+  if (!wrapper) return;
+
+  const slides = Array.from(wrapper.querySelectorAll('.review-slide'));
+  if (slides.length < 2) return;
+
+  const AUTOPLAY_MS = 4000;
+  const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  let current = Math.max(0, slides.findIndex(s => s.classList.contains('is-active')));
+  let timer = null;
+
+  function setActive(index) {
+    slides[current].classList.remove('is-active');
+    current = (index + slides.length) % slides.length;
+    slides[current].classList.add('is-active');
+  }
+
+  function goNext() { 
+    setActive(current + 1); 
+  }
+
+  function startAutoplay() {
+    if (prefersReducedMotion) return;
+    stopAutoplay();
+    timer = setInterval(goNext, AUTOPLAY_MS);
+  }
+
+  function stopAutoplay() {
+    if (timer) clearInterval(timer);
+    timer = null;
+  }
+
+  // Initialize carousel directly
+  setActive(current);
+  startAutoplay();
+})();

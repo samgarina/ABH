@@ -368,13 +368,48 @@ address { font-style: normal; }
 }
 
 .review-card {
-    background: rgba(255, 255, 255, 0.97);
-    border-radius: 12px;
-    padding: 44px 52px;
-    max-width: 740px;
-    width: 100%;
-    text-align: center;
-    box-shadow: 0 8px 36px rgba(0,0,0,0.22);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background: rgba(255, 255, 255, 0.97);
+  border-radius: 12px;
+  padding: 44px 52px;
+  max-width: 740px;
+  width: 100%;
+  text-align: center;
+  box-shadow: 0 8px 36px rgba(0,0,0,0.22);
+}
+
+/* Container for slides using CSS Grid */
+.review-slides-wrapper {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 1fr;
+  width: 100%;
+  margin-bottom: 20px; /* Space above button */
+}
+
+/* Stack all slides in the exact same grid cell */
+.review-slide {
+  grid-area: 1 / 1 / 2 / 2;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.4s ease-in-out, visibility 0.4s ease-in-out;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Active slide smoothly fades in */
+.review-slide.is-active {
+  opacity: 1;
+  visibility: visible;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
 }
 
 .quote-icon {
